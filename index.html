@@ -91,23 +91,23 @@
           <h1 class="title is-1 publication-title">What Matters in Learning from Large-Scale Datasets for Robot Manipulation</h1>
           <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href=""></a><sup>1</sup>,</span>
+              <a href="">___</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="">___</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="">___</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="">___</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="">Dan B Goldman</a><sup>2</sup>,
+              <a href="">___</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="">Steven M. Seitz</a><sup>1,2</sup>,
+              <a href="">___</a><sup>1,2</sup>,
             </span>
             <span class="author-block">
-              <a href="">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="">___</a><sup>2</sup>
             </span>
           </div> -->
 
@@ -259,7 +259,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Imitation learning from large multi-task demonstration datasets has emerged as a promising path for building generally-capable robots. As a result, 1000s of hours have been spent on building such large-scale datasets around the globe. Despite the continuous growth of such efforts, we still lack a systematic understanding of what data should be collected to improve the utility of a robotics dataset and facilitate downstream policy learning. In this work, we conduct a large-scale <em>dataset composition study</em> to answer this question. We develop a data generation framework to procedurally emulate common sources of diversity in existing datasets (such as sensor placements and object types and arrangements), and use it to generate large-scale robot datasets with controlled compositions, enabling a suite of dataset composition studies that would be prohibitively expensive in the real world. We focus on two practical settings: (1) what types of diversity should be emphasized when future researchers <em>collect</em> large-scale datasets for robotics, and (2) how should current practitioners <em>retrieve</em> relevant demonstrations from existing datasets to maximize downstream policy performance on tasks of interest. Our study yields several critical insights -- for example, we find that camera poses and spatial arrangements are crucial dimensions for both diversity in collection and alignment in retrieval. In real-world robot learning settings, we find that not only do our insights from simulation carry over, but our retrieval strategies on existing datasets such as DROID allow us to consistently outperform existing training strategies by up to 70%.
+            Imitation learning from large multi-task demonstration datasets has emerged as a promising path for building generally-capable robots. As a result, 1000s of hours have been spent on building such large-scale datasets around the globe. Despite the continuous growth of such efforts, we still lack a systematic understanding of what data should be collected to improve the utility of a robotics dataset and facilitate downstream policy learning. In this work, we conduct a large-scale <strong>dataset composition study</strong> to answer this question. We develop a data generation framework to procedurally emulate common sources of diversity in existing datasets (such as sensor placements and object types and arrangements), and use it to generate large-scale robot datasets with controlled compositions, enabling a suite of dataset composition studies that would be prohibitively expensive in the real world. We focus on two practical settings: (1) what types of diversity should be emphasized when future researchers <strong>collect</strong> large-scale datasets for robotics, and (2) how should current practitioners <em>retrieve</em> relevant demonstrations from existing datasets to maximize downstream policy performance on tasks of interest. Our study yields several critical insights -- for example, we find that camera poses and spatial arrangements are crucial dimensions for both diversity in collection and alignment in retrieval. In real-world robot learning settings, we find that not only do our insights from simulation carry over, but our retrieval strategies on existing datasets such as DROID allow us to consistently outperform existing training strategies by up to 70%.
           </p>
         </div>
       </div>
@@ -282,18 +282,26 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3">Data Composition Study - Collector and Retriever Perspectives</h2>
+    <p>We study dataset composition for imitation learning from two lenses - a dataset collector, and a dataset retriever.</p>
+    <img src="./static/images/collector-retriever-setup.jpg" alt="">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <h2 class="title is-3">MimicLabs Dataset</h2>
     <img src="./static/images/mimiclabs-dataset.jpg" alt="">
   </div>
-
 </section>
+
 
 
 
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Real robot videos. -->
-    <h2 class="title is-3">Real-robot Experiments</h2>
+    <h2 class="title is-3">Real-robot Experiments - retrieving DROID</h2>
 
     <h3 class="title is-4">Wipe Board</h3>
 
