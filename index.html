@@ -291,15 +291,32 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">MimicLabs Dataset</h2>
-    <p>To understand the effects of dataset composition along various dimensions of variation, we create a large robotic manipulation dataset with ~1M demonstration trajectories.</p>
+    <p>To understand the effects of dataset composition along various dimensions of variation (DVs), we create a large robotic manipulation dataset with ~1M demonstration trajectories, that we can retrieve for camera poses, backgrounds and textures, spatial arrangements of objects and receptacles, and motions that carry out the tasks.</p>
     <img src="./static/images/mimiclabs-dataset.jpg" alt="">
   </div>
 </section>
 
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3">The Collector's Perspective</h2>
 
-    <h2 class="title is-3">Some Target Tasks in the MimicLabs Dataset</h2>
+    <p>We design an experiment to understand the effects of variation in different DVs as they enable or hamper skill transfer when co-training with a large dataset. We create multiple target distributions with differing variations for each DV, and experimented co-training with misaligned variations in each DV.</p>
+    <br>
+
+    <img src="static/images/collector-sim.jpg" />
+
+    <p>On the <em>clear table</em> task, this experiment showed how (1) misaligned <em>camera poses</em> and <em>spatial arrangements</em> hamper skill transfer, and (2) diverse <em>camera poses</em> enable transfer in the presence of differing textures. </p>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">The Retriever's Perspective - in the MimicLabs Dataset</h2>
+
+    <p>Below are some demonstrations from the MimicLabs dataset for target tasks we consider in this study.</p>
+    <br>
 
     <div class="columns is-centered">
       <div class="column">
@@ -352,6 +369,10 @@
       </div>
     </div>
 
+    <p>We summarize our findings in the table below, that shows success rates on all five target tasks shown above when co-training on different dataset splits in the MimicLabs dataset. Our structured demonstration generation pipeline allows for counterfactual retrival on the absence of the required skill for grasping the required object or accessign the receptacle.</p>
+
+    <img src="static/images/retriever-mimiclabs.jpg" />
+
   </div>
 </section>
 
@@ -359,7 +380,10 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Real robot videos. -->
-    <h2 class="title is-3">Real-robot Experiments - retrieving DROID</h2>
+    <h2 class="title is-3">Real-robot Experiments - retrieval from DROID</h2>
+
+    <p>Below are some videos showing rollouts for different tasks, with different co-training datasets retrieved from the DROID dataset.</p>
+    <br>
 
     <h3 class="title is-4">Wipe Board</h3>
 
@@ -691,6 +715,11 @@
       </div>
       <!--/ Retrieve spatial. -->
     </div>
+
+    <p>Overall, we see significant boost in task success when retrieving on the proposed dimensions of variation, as summarized in the table below. Success rates are calculated over 20 rollouts on the real robot.</p>
+    <br>
+
+    <img src="static/images/retriever-droid.jpg" />
 
   </div>
 </section>
