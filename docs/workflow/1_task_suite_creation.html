@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating a new suite of tasks in MimicLabs &#8212; mimiclabs 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=a681ed88"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workflow/1_task_suite_creation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data collection in MimicLabs" href="2_demo_collection.html" />
+    <link rel="prev" title="Setting up Data Collection Devices" href="../installation/setup_devices.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">mimiclabs 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/download_datasets.html">MimicLabs Study Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/setup_devices.html">Setting up Data Collection Devices</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a new suite of tasks in MimicLabs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_demo_collection.html">Data collection in MimicLabs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../other/known_issues.html">Known Issues</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workflow/1_task_suite_creation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating a new suite of tasks in MimicLabs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-own-task">Create your own task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scene">Scene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-placement-regions">Object placement regions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-poses">Camera poses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-generated-textures-for-objects-and-table">Machine-generated textures for objects and table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-initialization">Task initialization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-goal">Task goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstration-subtasks">Demonstration subtasks</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="creating-a-new-suite-of-tasks-in-mimiclabs">
+<h1>Creating a new suite of tasks in MimicLabs<a class="headerlink" href="#creating-a-new-suite-of-tasks-in-mimiclabs" title="Link to this heading">#</a></h1>
+<section id="create-your-own-task">
+<h2>Create your own task<a class="headerlink" href="#create-your-own-task" title="Link to this heading">#</a></h2>
+<p>You can create your own suite of tasks in MimicLabs by cerating a path under <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimiclabs/task_suites</span></code>. Each task suite can contain multiple tasks each represented by a BDDL file. We use the BDDL infrastructure setup by LIBERO and extend it to include the ability to specify camera poses, textures, and demonstration states for MimicGen.</p>
+<p>Below we discuss all the critical components that make up a task config in BDDL. An example task suite is available in <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimiclabs/task_suites/test_suite</span></code>.</p>
+<section id="scene">
+<h3>Scene<a class="headerlink" href="#scene" title="Link to this heading">#</a></h3>
+<p>The first thing to provide in a task BDDL is the scene for your task. Same as LIBERO, we define each scene as a <code class="docutils literal notranslate"><span class="pre">problem</span></code> in the BDDL, which contains the specs for the scene background, the table geometry, and the robot positioning with respect to the table.</p>
+<p>Below is an example showing problem specification in a BDDL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">problem</span> <span class="n">MimicLabs_Lab1_Tabletop_Manipulation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>MimicLabs contains 8 such problem classes, using which we can instantiate tasks in 8 different virtual “labs”. You can find these problem classes in <code class="docutils literal notranslate"><span class="pre">mimiclabs/env/problems/mimiclabs_tabletop_manipulation.py</span></code>.</p>
+</section>
+<section id="object-placement-regions">
+<h3>Object placement regions<a class="headerlink" href="#object-placement-regions" title="Link to this heading">#</a></h3>
+<p>After specyfing the scene, next you will need to define initialization regions that will later be used for stating state initialization, goal, and demonstration predicates. We borrow many conventions from LIBERO to specify initialization regions of objects relative to a target table, as well as regions within fixtures.</p>
+<p>Below is an example region named <code class="docutils literal notranslate"><span class="pre">object_init_region</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">object_init_region</span>
+    <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+        <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span> <span class="o">-</span><span class="mf">0.1</span> <span class="mi">0</span> <span class="mf">0.1</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">:target</span></code> specifies what entity this region is relative to. The target <code class="docutils literal notranslate"><span class="pre">table</span></code> here is a keyword that anchors the provided range onto the appropriate table. All scenes in MimicLabs contain the same table geometry for simplicity, and all scenes contain just one table. Hence you can just use <code class="docutils literal notranslate"><span class="pre">table</span></code> as the target for objects in all MimicLabs scenes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">:ranges</span></code> is a list of (x, y) ranges, where each range is specified as a 4-tuple (x_start y_start x_end y_end).</p>
+<p><code class="docutils literal notranslate"><span class="pre">:yaw_rotation</span></code> is specified as a range in radians, for each range. Note that the yaw rotation provided in the object class takes precedence as does not override it.</p>
+</section>
+<section id="camera-poses">
+<h3>Camera poses<a class="headerlink" href="#camera-poses" title="Link to this heading">#</a></h3>
+<p>You may provide the initialization distribution of the <code class="docutils literal notranslate"><span class="pre">agentview</span></code> camera pose in the task config.</p>
+<p>Below is an example of how a camera initialization specification comes together in a BDDL, between distances 1.2m to 1.4m from the center of the table, pitch ranging from 45 to 60 degrees, yaw ranging from -15 to 15 degrees.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">camera</span>
+  <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">15</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="mi">15</span><span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(:</span><span class="n">jitter_mode</span> <span class="n">normal</span><span class="p">)</span>
+  <span class="p">(:</span><span class="n">unit</span> <span class="n">degrees</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">:ranges</span></code> is provided as a list of 6-tuple(s) of floating-point numbers. First three are the initial <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">theta</span></code>, <code class="docutils literal notranslate"><span class="pre">phi</span></code> values in <a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">spherical coordinates</a> (physics convention), and the last three the final values. This creates a region for perturbance of the camera at each scene initialization. By default, <code class="docutils literal notranslate"><span class="pre">r</span></code> is in metres, <code class="docutils literal notranslate"><span class="pre">theta</span></code> and <code class="docutils literal notranslate"><span class="pre">phi</span></code> are in radians (can optionally be specified in degrees, see below for setting the unit for angles). The camera always points at the center of the table.</p>
+<p><code class="docutils literal notranslate"><span class="pre">:jitter_mode</span></code> specifies how the camera jitters within each provided range. Current supported modes are <code class="docutils literal notranslate"><span class="pre">uniform</span></code> (uniform sampling in the provided range) and <code class="docutils literal notranslate"><span class="pre">normal</span></code> (normal distribution with mean at the center of the provided range with ~98% of the samples falling within the provided range).</p>
+<p><code class="docutils literal notranslate"><span class="pre">:unit</span></code> (optional) lets you set the unit to <code class="docutils literal notranslate"><span class="pre">degrees</span></code> if you want to specify <code class="docutils literal notranslate"><span class="pre">theta</span></code> and <code class="docutils literal notranslate"><span class="pre">phi</span></code> in degrees instead of the default unit <code class="docutils literal notranslate"><span class="pre">radians</span></code>.</p>
+</section>
+<section id="machine-generated-textures-for-objects-and-table">
+<h3>Machine-generated textures for objects and table<a class="headerlink" href="#machine-generated-textures-for-objects-and-table" title="Link to this heading">#</a></h3>
+<p>You may provide specs for generating a new texture at each environment initialization.</p>
+<p>Below is an example that shows how you can use the <code class="docutils literal notranslate"><span class="pre">fractal</span></code> algorithm to generate textures for an object (named <code class="docutils literal notranslate"><span class="pre">object_1</span></code> here) on the fly, and the <code class="docutils literal notranslate"><span class="pre">jitter</span></code> algorithm to randomly jitter the color of the table (named <code class="docutils literal notranslate"><span class="pre">table</span></code> in the scene/problem) at each task initialization:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">object_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">50</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">70</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">110</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">130</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(</span><span class="n">table</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">jitter</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">170</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">179</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">10</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">50</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">59</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">60</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">70</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">110</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">119</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">120</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">130</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">:type</span></code> specifies the algorithm used to generate the texture. Supported types are <code class="docutils literal notranslate"><span class="pre">fractal</span></code> and <code class="docutils literal notranslate"><span class="pre">jitter</span></code>. Both <code class="docutils literal notranslate"><span class="pre">fractal</span></code> and <code class="docutils literal notranslate"><span class="pre">jitter</span></code> algorithms accept <code class="docutils literal notranslate"><span class="pre">:hsv</span></code> ranges, whereas the <code class="docutils literal notranslate"><span class="pre">fractal</span></code> algorithm accepts additional <code class="docutils literal notranslate"><span class="pre">:turbulence</span></code> and <code class="docutils literal notranslate"><span class="pre">:sigma</span></code> values.</p>
+<p>By default, textures are generated and stored in the path <code class="docutils literal notranslate"><span class="pre">&lt;path_to_this_repo&gt;/mimiclabs/tmp</span></code>. However, you can specify your own path by setting the <code class="docutils literal notranslate"><span class="pre">MIMICLABS_TMP_FOLDER</span></code> environment variable as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">MIMICLABS_TMP_FOLDER</span><span class="o">=</span>/my/custom/tmp/folder
+</pre></div>
+</div>
+<!-- add examples from paper appendix -->
+</section>
+<section id="task-initialization">
+<h3>Task initialization<a class="headerlink" href="#task-initialization" title="Link to this heading">#</a></h3>
+<p>Having specified objects and different initialization regions, we can now specify predicates for initializing the scene. Below is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">init</span>
+  <span class="p">(</span><span class="n">On</span> <span class="n">object_1</span> <span class="n">table_object_init_region</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">On</span> <span class="n">wooden_cabinet_1</span> <span class="n">table_wooden_cabinet_init_region</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">Open</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Each predicate starts with an operator followed by 1 or 2 operands. Each operand is either an object/fixture/site identifier (e.g. <code class="docutils literal notranslate"><span class="pre">object_1</span></code>, <code class="docutils literal notranslate"><span class="pre">wooden_cabinet_1</span></code>, <code class="docutils literal notranslate"><span class="pre">wooden_cabinet_1_top_region</span></code> respectively), or a region. Each region is specified as <code class="docutils literal notranslate"><span class="pre">&lt;target_name&gt;_&lt;region_name&gt;</span></code>.</p>
+</section>
+<section id="task-goal">
+<h3>Task goal<a class="headerlink" href="#task-goal" title="Link to this heading">#</a></h3>
+<p>The goal for your task should be provided as a predicate or multiple predicates connected with an <code class="docutils literal notranslate"><span class="pre">And</span></code> or <code class="docutils literal notranslate"><span class="pre">Or</span></code> operator.</p>
+<p>Example of a single-goal specification in BDDL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">goal</span>
+    <span class="p">(</span><span class="n">In</span> <span class="n">object_1</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Examples of multi-goal specification in BDDL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">goal</span>
+    <span class="p">(</span><span class="n">And</span> <span class="p">(</span><span class="n">Open</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span> <span class="p">(</span><span class="n">In</span> <span class="n">object_1</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">goal</span>
+    <span class="p">(</span><span class="n">Or</span> <span class="p">(</span><span class="n">Open</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span> <span class="p">(</span><span class="n">In</span> <span class="n">object_1</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that we support goal conjunctions using both <code class="docutils literal notranslate"><span class="pre">And</span></code> and <code class="docutils literal notranslate"><span class="pre">Or</span></code> predicates. This enables the task goal to be multi-modal.</p>
+</section>
+<section id="demonstration-subtasks">
+<h3>Demonstration subtasks<a class="headerlink" href="#demonstration-subtasks" title="Link to this heading">#</a></h3>
+<p>We need to specify subtask demonstration predicates to help MimicGen understand how the demonstrations are collected for this task. We use these predicates to split the provided demonstration into <strong>object-centric</strong> chunks, and use MimicGen to expand the demonstration set by warping trajectories around the target object for each subtask chunk.</p>
+<p>For example: if the task is to <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">the</span> <span class="pre">drawer</span> <span class="pre">and</span> <span class="pre">put</span> <span class="pre">the</span> <span class="pre">bowl</span> <span class="pre">in</span> <span class="pre">it</span></code>, you may provide the following subtasks in your BDDL: </br></p>
+<blockquote>
+<div><p>a. open the drawer </br>
+b. grasp the bowl </br>
+c. put the bowl in the drawer </br></p>
+</div></blockquote>
+<p>Below is an example specifying the <code class="docutils literal notranslate"><span class="pre">goal</span></code> and <code class="docutils literal notranslate"><span class="pre">demonstration</span></code> states in a task BDDL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">goal</span>
+    <span class="p">(</span><span class="n">In</span> <span class="n">object_1</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(:</span><span class="n">demonstration</span>
+    <span class="p">(</span><span class="n">Open</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">Grasp</span> <span class="n">object_1</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">In</span> <span class="n">object_1</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The demo collection script also uses these predicates to guide data collection predicate by predicate.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../installation/setup_devices.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setting up Data Collection Devices</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_demo_collection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data collection in MimicLabs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-own-task">Create your own task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scene">Scene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-placement-regions">Object placement regions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-poses">Camera poses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-generated-textures-for-objects-and-table">Machine-generated textures for objects and table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-initialization">Task initialization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-goal">Task goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstration-subtasks">Demonstration subtasks</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vaibhav Saxena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Vaibhav Saxena.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

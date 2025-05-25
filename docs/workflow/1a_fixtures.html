@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fixtures in MimicLabs &#8212; mimiclabs 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=a681ed88"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workflow/1a_fixtures';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">mimiclabs 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/download_datasets.html">MimicLabs Study Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/setup_devices.html">Setting up Data Collection Devices</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_task_suite_creation.html">Creating a new suite of tasks in MimicLabs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_demo_collection.html">Data collection in MimicLabs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../other/known_issues.html">Known Issues</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workflow/1a_fixtures.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fixtures in MimicLabs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawer-cabinets">3-drawer Cabinets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-cabinet-placement">Specifying cabinet placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-drawer-within-cabinets">Specifying drawer within cabinets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microwaves">Microwaves</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-microwave-placement">Specifying microwave placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-regions-for-microwaves">Specifying regions for microwaves</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coffee-machine">Coffee Machine</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-coffee-machine-placement">Specifying coffee machine placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-regions-within-the-coffee-machine">Specifying regions within the coffee machine</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="fixtures-in-mimiclabs">
+<h1>Fixtures in MimicLabs<a class="headerlink" href="#fixtures-in-mimiclabs" title="Link to this heading">#</a></h1>
+<p>We list here all supported fixtures that are currently supported in MimicLabs, and their respective configs for placement arrangements.</p>
+<p>Credits to the authors of LIBERO for setting up the base assets that enabled us to expand on.</p>
+<section id="drawer-cabinets">
+<h2>3-drawer Cabinets<a class="headerlink" href="#drawer-cabinets" title="Link to this heading">#</a></h2>
+<section id="specifying-cabinet-placement">
+<h3>Specifying cabinet placement<a class="headerlink" href="#specifying-cabinet-placement" title="Link to this heading">#</a></h3>
+<p>You can specify the placement region of a cabinet as in the example below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">regions</span>
+    <span class="p">(</span><span class="n">cabinet_init_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+        <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span> <span class="mf">0.39</span> <span class="mf">0.01</span> <span class="mf">0.41</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(:</span><span class="n">fixtures</span>
+    <span class="n">table</span> <span class="o">-</span> <span class="n">table</span>
+    <span class="n">cabinet_1</span> <span class="o">-</span> <span class="n">metal_cabinet</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This initializes a <code class="docutils literal notranslate"><span class="pre">metal_cabinet</span></code> (named <code class="docutils literal notranslate"><span class="pre">cabinet_1</span></code>) in the xy range <code class="docutils literal notranslate"><span class="pre">(-0.01</span> <span class="pre">0.39</span> <span class="pre">0.01</span> <span class="pre">0.41)</span></code> with respect to the <code class="docutils literal notranslate"><span class="pre">table</span></code>.</p>
+<p>You can change type of cabinet by specifying in <code class="docutils literal notranslate"><span class="pre">:fixtures</span></code> a cabinet name from the following list of available cabinets:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">colorful_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metal_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wooden_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">white_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blue_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marble_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lava_cabinet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">light_wood_cabinet</span></code></p></li>
+</ul>
+</section>
+<section id="specifying-drawer-within-cabinets">
+<h3>Specifying drawer within cabinets<a class="headerlink" href="#specifying-drawer-within-cabinets" title="Link to this heading">#</a></h3>
+<p>You can specify the drawer of significance for your task by stating the appropriate region in <code class="docutils literal notranslate"><span class="pre">:regions</span></code> as in the example below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">regions</span>
+    <span class="p">(</span><span class="n">cabinet_init_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+        <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span> <span class="mf">0.39</span> <span class="mf">0.01</span> <span class="mf">0.41</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">top_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">cabinet_1</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(:</span><span class="n">fixtures</span>
+    <span class="n">table</span> <span class="o">-</span> <span class="n">table</span>
+    <span class="n">cabinet_1</span> <span class="o">-</span> <span class="n">metal_cabinet</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This initializes a <code class="docutils literal notranslate"><span class="pre">metal_cabinet</span></code> instance with the top-drawer specified as <code class="docutils literal notranslate"><span class="pre">top_region</span></code>.</p>
+<p>You can specify the drawer of interest by specifying one of the following regions for the 3-drawer cabinet:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">top_region</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">middle_region</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bottom_region</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="microwaves">
+<h2>Microwaves<a class="headerlink" href="#microwaves" title="Link to this heading">#</a></h2>
+<section id="specifying-microwave-placement">
+<h3>Specifying microwave placement<a class="headerlink" href="#specifying-microwave-placement" title="Link to this heading">#</a></h3>
+<p>You can specify the placement region of a microwave as in the example below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">regions</span>
+    <span class="p">(</span><span class="n">microwave_init_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+        <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.25</span> <span class="o">-</span><span class="mf">0.01</span> <span class="mf">0.30</span> <span class="mf">0.01</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mf">1.65806</span> <span class="o">-</span><span class="mf">1.48353</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(:</span><span class="n">fixtures</span>
+    <span class="n">table</span> <span class="o">-</span> <span class="n">table</span>
+    <span class="n">microwave_1</span> <span class="o">-</span> <span class="n">microwave</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This initializes a <code class="docutils literal notranslate"><span class="pre">microwave</span></code> (named <code class="docutils literal notranslate"><span class="pre">microwave_1</span></code>) in the xy range <code class="docutils literal notranslate"><span class="pre">(0.25</span> <span class="pre">-0.01</span> <span class="pre">0.30</span> <span class="pre">0.01)</span></code> and yaw range <code class="docutils literal notranslate"><span class="pre">(-1.65806</span> <span class="pre">-1.48353)</span></code> with respect to the <code class="docutils literal notranslate"><span class="pre">table</span></code>.</p>
+<p>You can change type of microwave by specifying in <code class="docutils literal notranslate"><span class="pre">:fixtures</span></code> a microwave name from the following list of available microwaves:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_7</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">microwave_8</span></code></p></li>
+</ul>
+</section>
+<section id="specifying-regions-for-microwaves">
+<h3>Specifying regions for microwaves<a class="headerlink" href="#specifying-regions-for-microwaves" title="Link to this heading">#</a></h3>
+<p>You can specify the region of interest within the microwave for your task by stating the appropriate region in <code class="docutils literal notranslate"><span class="pre">:regions</span></code> as in the example below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">regions</span>
+    <span class="p">(</span><span class="n">microwave_init_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+        <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.25</span> <span class="o">-</span><span class="mf">0.01</span> <span class="mf">0.30</span> <span class="mf">0.01</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mf">1.65806</span> <span class="o">-</span><span class="mf">1.48353</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">heating_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">microwave_1</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(:</span><span class="n">fixtures</span>
+    <span class="n">table</span> <span class="o">-</span> <span class="n">table</span>
+    <span class="n">microwave_1</span> <span class="o">-</span> <span class="n">microwave</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This initializes a <code class="docutils literal notranslate"><span class="pre">microwave</span></code> instance with the heating region specified as <code class="docutils literal notranslate"><span class="pre">heating_region</span></code>.</p>
+<p>You can specify the region of interest by specifying one of the following regions for the microwave:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heating_region</span></code> - region inside the microwave</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">top_side</span></code> - region above the microwave</p></li>
+</ul>
+</section>
+</section>
+<section id="coffee-machine">
+<h2>Coffee Machine<a class="headerlink" href="#coffee-machine" title="Link to this heading">#</a></h2>
+<section id="specifying-coffee-machine-placement">
+<h3>Specifying coffee machine placement<a class="headerlink" href="#specifying-coffee-machine-placement" title="Link to this heading">#</a></h3>
+<p>You can specify the coffee machine in your task config as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">regions</span>
+    <span class="p">(</span><span class="n">coffee_machine_init_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+        <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span> <span class="mf">0.25</span> <span class="o">-</span><span class="mf">0.1</span> <span class="mf">0.35</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.4</span> <span class="mf">0.45</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(:</span><span class="n">objects</span>
+    <span class="n">coffee_machine_1</span> <span class="o">-</span> <span class="n">coffee_machine</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This initializes a <code class="docutils literal notranslate"><span class="pre">coffee_machine</span></code> (named <code class="docutils literal notranslate"><span class="pre">coffee_machine_1</span></code>) in the xy range <code class="docutils literal notranslate"><span class="pre">(-0.2</span> <span class="pre">0.25</span> <span class="pre">-0.1</span> <span class="pre">0.35)</span></code> and yaw range <code class="docutils literal notranslate"><span class="pre">(0.4</span> <span class="pre">0.45)</span></code> with respect to the <code class="docutils literal notranslate"><span class="pre">table</span></code>.</p>
+<p>We currently only support one coffee machine:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">coffee_machine</span></code></p></li>
+</ul>
+</section>
+<section id="specifying-regions-within-the-coffee-machine">
+<h3>Specifying regions within the coffee machine<a class="headerlink" href="#specifying-regions-within-the-coffee-machine" title="Link to this heading">#</a></h3>
+<p>You can specify the region of interest within the coffee machine for your task by stating the appropriate region in <code class="docutils literal notranslate"><span class="pre">:regions</span></code> as in the example below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">regions</span>
+    <span class="p">(</span><span class="n">coffee_machine_init_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
+        <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span> <span class="mf">0.25</span> <span class="o">-</span><span class="mf">0.1</span> <span class="mf">0.35</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.4</span> <span class="mf">0.45</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">pod_region</span>
+        <span class="p">(:</span><span class="n">target</span> <span class="n">coffee_machine_1</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(:</span><span class="n">objects</span>
+    <span class="n">coffee_machine_1</span> <span class="o">-</span> <span class="n">coffee_machine</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This initializes a <code class="docutils literal notranslate"><span class="pre">coffee_machine</span></code> instance with region where a pod is supposed to go specified as <code class="docutils literal notranslate"><span class="pre">pod_region</span></code>.</p>
+<p>The coffee machine currently supports one region:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pod_region</span></code></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawer-cabinets">3-drawer Cabinets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-cabinet-placement">Specifying cabinet placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-drawer-within-cabinets">Specifying drawer within cabinets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microwaves">Microwaves</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-microwave-placement">Specifying microwave placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-regions-for-microwaves">Specifying regions for microwaves</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coffee-machine">Coffee Machine</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-coffee-machine-placement">Specifying coffee machine placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-regions-within-the-coffee-machine">Specifying regions within the coffee machine</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vaibhav Saxena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Vaibhav Saxena.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
