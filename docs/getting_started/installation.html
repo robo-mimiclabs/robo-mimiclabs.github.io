@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; mimiclabs 1.0 documentation</title>
+    <title>Welcome to MimicLabs! &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -40,10 +40,10 @@
     <script src="../static/doctools.js?v=9a2dae69"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'installation/getting_started';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/installation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MimicLabs Study Datasets" href="download_datasets.html" />
+    <link rel="next" title="Setting up Data Collection Devices" href="setup_devices.html" />
     <link rel="prev" title="Welcome to mimiclabs’s documentation!" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -148,11 +148,15 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="download_datasets.html">MimicLabs Study Datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Welcome to MimicLabs!</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="setup_devices.html">Setting up Data Collection Devices</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MimicLabs Datasets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="download_datasets.html">MimicLabs Study Datasets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -217,7 +221,7 @@
       
       
       
-      <li><a href="../_sources/installation/getting_started.md" target="_blank"
+      <li><a href="../_sources/getting_started/installation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +305,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Getting Started</h1>
+    <h1>Welcome to MimicLabs!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -311,14 +315,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-conda-environment">1. Setting up your conda environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-supporting-libraries">2. Installing supporting libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mimiclabs">3. Installing MimicLabs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-mimiclabs-assets">4. Downloading MimicLabs assets:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to MimicLabs!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-conda-environment">1. Setting up your conda environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-supporting-libraries">2. Installing supporting libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mimiclabs">3. Installing MimicLabs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-mimiclabs-assets">4. Downloading MimicLabs assets</a></li>
 </ul>
 </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -329,26 +335,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
-<p>Welcome to MimicLabs!</p>
+  <section id="welcome-to-mimiclabs">
+<h1>Welcome to MimicLabs!<a class="headerlink" href="#welcome-to-mimiclabs" title="Link to this heading">#</a></h1>
 <p>You can use this repository to:</p>
 <ol class="arabic simple">
 <li><p>build your own tasks for a robot learning study</p></li>
 <li><p>collect expert human teleoperated demonstrations</p></li>
 <li><p>expand your datasets using MimicGen</p></li>
 </ol>
+</section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
 <section id="setting-up-your-conda-environment">
-<h3>1. Setting up your conda environment<a class="headerlink" href="#setting-up-your-conda-environment" title="Link to this heading">#</a></h3>
+<h2>1. Setting up your conda environment<a class="headerlink" href="#setting-up-your-conda-environment" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>mimiclabs<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
 $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>mimiclabs
 </pre></div>
 </div>
 </section>
 <section id="installing-supporting-libraries">
-<h3>2. Installing supporting libraries<a class="headerlink" href="#installing-supporting-libraries" title="Link to this heading">#</a></h3>
+<h2>2. Installing supporting libraries<a class="headerlink" href="#installing-supporting-libraries" title="Link to this heading">#</a></h2>
 <p>Run the following commands to install <strong>Robosuite</strong>, <strong>LIBERO</strong>, <strong>MimicGen</strong>, and <strong>RoboCasa</strong>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install LIBERO</span>
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Lifelong-Robot-Learning/LIBERO.git
@@ -377,7 +383,7 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </div>
 </section>
 <section id="installing-mimiclabs">
-<h3>3. Installing MimicLabs<a class="headerlink" href="#installing-mimiclabs" title="Link to this heading">#</a></h3>
+<h2>3. Installing MimicLabs<a class="headerlink" href="#installing-mimiclabs" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>&lt;link_to_this_repo&gt;
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mimiclabs
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
@@ -386,12 +392,11 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 </div>
 </section>
 <section id="downloading-mimiclabs-assets">
-<h3>4. Downloading MimicLabs assets:<a class="headerlink" href="#downloading-mimiclabs-assets" title="Link to this heading">#</a></h3>
+<h2>4. Downloading MimicLabs assets<a class="headerlink" href="#downloading-mimiclabs-assets" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mimiclabs/mimiclabs
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>scripts/download_mimiclabs_assets.py
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 
@@ -416,11 +421,11 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
       </div>
     </a>
     <a class="right-next"
-       href="download_datasets.html"
+       href="setup_devices.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MimicLabs Study Datasets</p>
+        <p class="prev-next-title">Setting up Data Collection Devices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -440,14 +445,16 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-conda-environment">1. Setting up your conda environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-supporting-libraries">2. Installing supporting libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mimiclabs">3. Installing MimicLabs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-mimiclabs-assets">4. Downloading MimicLabs assets:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to MimicLabs!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-conda-environment">1. Setting up your conda environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-supporting-libraries">2. Installing supporting libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mimiclabs">3. Installing MimicLabs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-mimiclabs-assets">4. Downloading MimicLabs assets</a></li>
 </ul>
 </li>
 </ul>
+
   </nav></div>
 
 </div></div>

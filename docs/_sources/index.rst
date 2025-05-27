@@ -8,11 +8,16 @@ Welcome to mimiclabs's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Installation
+   :caption: Getting Started
 
-   installation/getting_started
-   installation/download_datasets
-   installation/setup_devices
+   getting_started/installation
+   getting_started/setup_devices
+
+.. toctree::
+   :maxdepth: 2
+   :caption: MimicLabs Datasets
+
+   getting_started/download_datasets
 
 .. toctree::
    :maxdepth: 2

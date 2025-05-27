@@ -1,13 +1,11 @@
-# Getting Started
-
-Welcome to MimicLabs!
+# Welcome to MimicLabs!
 
 You can use this repository to:
 1. build your own tasks for a robot learning study
 2. collect expert human teleoperated demonstrations
 3. expand your datasets using MimicGen
 
-## Installation
+# Installation
 
 ### 1. Setting up your conda environment
 ```bash
@@ -51,7 +49,7 @@ Run the following commands to install **Robosuite**, **LIBERO**, **MimicGen**, a
 (mimiclabs)$ pip install -r requirements.txt
 ```
 
-### 4. Downloading MimicLabs assets:
+### 4. Downloading MimicLabs assets
 ```bash
 (mimiclabs)$ cd mimiclabs/mimiclabs
 (mimiclabs)$ python scripts/download_mimiclabs_assets.py
