@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fixtures in MimicLabs &#8212; mimiclabs 1.0 documentation</title>
+    <title>Fixtures &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -40,9 +40,11 @@
     <script src="../static/doctools.js?v=9a2dae69"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'workflow/1a_fixtures';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix/fixtures';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Objects" href="objects.html" />
+    <link rel="prev" title="Policy learning with Robomimic" href="../tutorials/policy_learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -105,8 +107,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -150,19 +150,31 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Welcome to MimicLabs!</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/welcome.html">Welcome to MimicLabs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/setup_devices.html">Setting up Data Collection Devices</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MimicLabs Datasets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/download_datasets.html">MimicLabs Study Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_task_suite_creation.html">Creating a new suite of tasks in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_demo_collection.html">Data collection in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/1_task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/2_demo_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/study_design.html">Design a study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenes.html">Scenes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
 <ul class="nav bd-sidenav">
@@ -221,7 +233,7 @@
       
       
       
-      <li><a href="../_sources/workflow/1a_fixtures.md" target="_blank"
+      <li><a href="../_sources/appendix/fixtures.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fixtures in MimicLabs</h1>
+    <h1>Fixtures</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -315,7 +327,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawer-cabinets">3-drawer Cabinets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cabinets">Cabinets</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-cabinet-placement">Specifying cabinet placement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-drawer-within-cabinets">Specifying drawer within cabinets</a></li>
 </ul>
@@ -341,12 +353,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="fixtures-in-mimiclabs">
-<h1>Fixtures in MimicLabs<a class="headerlink" href="#fixtures-in-mimiclabs" title="Link to this heading">#</a></h1>
+  <section id="fixtures">
+<h1>Fixtures<a class="headerlink" href="#fixtures" title="Link to this heading">#</a></h1>
 <p>We list here all supported fixtures that are currently supported in MimicLabs, and their respective configs for placement arrangements.</p>
 <p>Credits to the authors of LIBERO for setting up the base assets that enabled us to expand on.</p>
-<section id="drawer-cabinets">
-<h2>3-drawer Cabinets<a class="headerlink" href="#drawer-cabinets" title="Link to this heading">#</a></h2>
+<section id="cabinets">
+<h2>Cabinets<a class="headerlink" href="#cabinets" title="Link to this heading">#</a></h2>
 <section id="specifying-cabinet-placement">
 <h3>Specifying cabinet placement<a class="headerlink" href="#specifying-cabinet-placement" title="Link to this heading">#</a></h3>
 <p>You can specify the placement region of a cabinet as in the example below:</p>
@@ -559,6 +571,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../tutorials/policy_learning.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Policy learning with Robomimic</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="objects.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Objects</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -575,7 +605,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawer-cabinets">3-drawer Cabinets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cabinets">Cabinets</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-cabinet-placement">Specifying cabinet placement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-drawer-within-cabinets">Specifying drawer within cabinets</a></li>
 </ul>

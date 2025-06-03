@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data collection in MimicLabs &#8212; mimiclabs 1.0 documentation</title>
+    <title>Policy learning with Robomimic &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -40,11 +40,11 @@
     <script src="../static/doctools.js?v=9a2dae69"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'workflow/2_demo_collection';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/policy_learning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dataset expansion using MimicGen" href="3_dataset_expansion.html" />
-    <link rel="prev" title="Creating a new suite of tasks in MimicLabs" href="1_task_suite_creation.html" />
+    <link rel="next" title="Fixtures" href="../appendix/fixtures.html" />
+    <link rel="prev" title="Using MimicLabs Datasets" href="using_mimiclabs_datasets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,19 +150,31 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Welcome to MimicLabs!</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/welcome.html">Welcome to MimicLabs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/setup_devices.html">Setting up Data Collection Devices</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MimicLabs Datasets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/download_datasets.html">MimicLabs Study Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modules/1_task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/2_demo_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_task_suite_creation.html">Creating a new suite of tasks in MimicLabs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data collection in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="study_design.html">Design a study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Policy learning with Robomimic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/fixtures.html">Fixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/scenes.html">Scenes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
 <ul class="nav bd-sidenav">
@@ -221,7 +233,7 @@
       
       
       
-      <li><a href="../_sources/workflow/2_demo_collection.md" target="_blank"
+      <li><a href="../_sources/tutorials/policy_learning.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -292,9 +304,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -305,24 +315,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data collection in MimicLabs</h1>
+    <h1>Policy learning with Robomimic</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-expert-demonstrations">Collecting expert demonstrations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controls">Controls</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-quest">Meta Quest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacemouse">SpaceMouse</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -332,52 +329,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="data-collection-in-mimiclabs">
-<h1>Data collection in MimicLabs<a class="headerlink" href="#data-collection-in-mimiclabs" title="Link to this heading">#</a></h1>
-<p>We support data collection using a Meta Quest and a SpaceMouse in MimicLabs. Please follow instructions in <code class="docutils literal notranslate"><span class="pre">docs/installation/setup_devices.md</span></code> to setup your device before collecting expert demonstrations for the tasks your created.</p>
-<section id="collecting-expert-demonstrations">
-<h2>Collecting expert demonstrations<a class="headerlink" href="#collecting-expert-demonstrations" title="Link to this heading">#</a></h2>
-<p>After having set up your task config, use our provided script to collect demonstrations for your task:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_MIMICLABS&gt;/mimiclabs/data_collection/sim
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>scripts/collect_data.py<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--task_suite_name<span class="w"> </span>&lt;YOUR/TASK/SUITE&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--task_name<span class="w"> </span>&lt;TASK_NAME&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--robots<span class="w"> </span>Panda<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--control_delta<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--device<span class="w"> </span>&lt;DEVICE_NAME&gt;
-</pre></div>
-</div>
-<p>For an example, you can replace <code class="docutils literal notranslate"><span class="pre">&lt;YOUR/TASK/SUITE&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">test_suite</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;TASK_NAME&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">test_task</span></code>. This will spin-up data collection for the task config located at <code class="docutils literal notranslate"><span class="pre">mimiclabs/task_suites/test_siute/test_task.bddl</span></code> in this repo. Note that <code class="docutils literal notranslate"><span class="pre">&lt;YOUR/TASK/SUITE&gt;</span></code> can be a directory tree and does not necessarily have to be a single directory.</p>
-<p>You can specify your choice of device by replacing <code class="docutils literal notranslate"><span class="pre">&lt;DEVICE_NAME&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">spacemouse</span></code> or <code class="docutils literal notranslate"><span class="pre">quest</span></code>.</p>
-<p>By default, demos will be stored under <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_MIMICLABS&gt;/mimiclabs/data_collection/sim/demos/&lt;YOUR/TASK/SUITE&gt;/&lt;TASK_NAME&gt;</span></code>.</p>
-<p>Once collected, run the following script to post-process demos and save them into a single hdf5 file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>scripts/postprocess_demos.py<span class="w"> </span>--demo_dir<span class="w"> </span>&lt;PATH/TO/COLLECTED/DEMOS&gt;
-</pre></div>
-</div>
-<p>To expand the collected source demonstrations, follow instructions in the next tutorial.</p>
-</section>
-<section id="controls">
-<h2>Controls<a class="headerlink" href="#controls" title="Link to this heading">#</a></h2>
-<section id="meta-quest">
-<h3>Meta Quest<a class="headerlink" href="#meta-quest" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Left controller: move robot</p></li>
-<li><p>Right controller: move second robot (if applicable)</p></li>
-<li><p>A button: save demo at any stage (saving also automatically happens when task is done)</p></li>
-<li><p>B button: delete current demo, and start a new one</p></li>
-<li><p>ctrl+C: discard current demo and exit</p></li>
-</ul>
-</section>
-<section id="spacemouse">
-<h3>SpaceMouse<a class="headerlink" href="#spacemouse" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Joystick: move robot</p></li>
-<li><p>Right button: start data collection / discard demo</p></li>
-<li><p>Left button: toggle gripper</p></li>
-<li><p>ctrl+C: discard current demo and exit</p></li>
-</ul>
-<!-- TODO add playback_demo.py; make a note that camera view in data collection is frontview but that in playback is the one reset by the bddl. --></section>
-</section>
+  <section id="policy-learning-with-robomimic">
+<h1>Policy learning with Robomimic<a class="headerlink" href="#policy-learning-with-robomimic" title="Link to this heading">#</a></h1>
+<p>You can use the datasets you collect/generate to train Behavior Cloning policies using RoboMimic.</p>
 </section>
 
 
@@ -392,20 +346,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_task_suite_creation.html"
+       href="using_mimiclabs_datasets.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Creating a new suite of tasks in MimicLabs</p>
+        <p class="prev-next-title">Using MimicLabs Datasets</p>
       </div>
     </a>
     <a class="right-next"
-       href="3_dataset_expansion.html"
+       href="../appendix/fixtures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dataset expansion using MimicGen</p>
+        <p class="prev-next-title">Fixtures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -415,26 +369,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-expert-demonstrations">Collecting expert demonstrations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controls">Controls</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-quest">Meta Quest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacemouse">SpaceMouse</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

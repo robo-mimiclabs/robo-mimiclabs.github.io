@@ -1,11 +1,11 @@
-# Creating a new suite of tasks in MimicLabs
+# Task Suites
 
-## Create your own task
 
 You can create your own suite of tasks in MimicLabs by cerating a path under `mimiclabs/mimiclabs/task_suites`. Each task suite can contain multiple tasks each represented by a BDDL file. We use the BDDL infrastructure setup by LIBERO and extend it to include the ability to specify camera poses, textures, and demonstration states for MimicGen.
 
 Below we discuss all the critical components that make up a task config in BDDL. An example task suite is available in `mimiclabs/mimiclabs/task_suites/test_suite`.
 
+## Create your own task
 
 ### Scene
 The first thing to provide in a task BDDL is the scene for your task. Same as LIBERO, we define each scene as a `problem` in the BDDL, which contains the specs for the scene background, the table geometry, and the robot positioning with respect to the table.

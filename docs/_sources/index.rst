@@ -10,6 +10,7 @@ Welcome to mimiclabs's documentation!
    :maxdepth: 2
    :caption: Getting Started
 
+   getting_started/welcome
    getting_started/installation
    getting_started/setup_devices
 
@@ -21,11 +22,27 @@ Welcome to mimiclabs's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Workflows
+   :caption: Modules
 
-   workflow/1_task_suite_creation
-   workflow/2_demo_collection
-   workflow/3_dataset_expansion
+   modules/1_task_suite_creation
+   modules/2_demo_collection
+   modules/3_dataset_expansion
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials
+
+   tutorials/study_design
+   tutorials/using_mimiclabs_datasets
+   tutorials/policy_learning
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Scenes and Assets
+
+   appendix/fixtures
+   appendix/objects
+   appendix/scenes
 
 .. toctree::
    :maxdepth: 2

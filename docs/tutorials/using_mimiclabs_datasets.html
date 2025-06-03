@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>mimiclabs.envs.problems package &#8212; mimiclabs 1.0 documentation</title>
+    <title>Using MimicLabs Datasets &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -40,9 +40,11 @@
     <script src="../static/doctools.js?v=9a2dae69"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/mimiclabs.envs.problems';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using_mimiclabs_datasets';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Policy learning with Robomimic" href="policy_learning.html" />
+    <link rel="prev" title="Design a study" href="study_design.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,10 +165,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/study_design.html">Design a study</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="study_design.html">Design a study</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policy_learning.html">Policy learning with Robomimic</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
 <ul class="nav bd-sidenav">
@@ -231,7 +233,7 @@
       
       
       
-      <li><a href="../_sources/api/mimiclabs.envs.problems.rst" target="_blank"
+      <li><a href="../_sources/tutorials/using_mimiclabs_datasets.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -241,7 +243,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -315,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>mimiclabs.envs.problems package</h1>
+    <h1>Using MimicLabs Datasets</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,9 +327,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-task">Target task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-demos-with-matching-objects">Retrieving demos with matching objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-demos-with-matching-camera-poses">Retrieving demos with matching camera poses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-demos-with-matching-spatial-arrangements">Retrieving demos with matching spatial arrangements</a></li>
 </ul>
             </nav>
         </div>
@@ -339,16 +342,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mimiclabs-envs-problems-package">
-<h1>mimiclabs.envs.problems package<a class="headerlink" href="#mimiclabs-envs-problems-package" title="Link to this heading">#</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+  <section id="using-mimiclabs-datasets">
+<h1>Using MimicLabs Datasets<a class="headerlink" href="#using-mimiclabs-datasets" title="Link to this heading">#</a></h1>
+<p>We used the MimicLabs Datasets to perform a dataset composition study. In this tutorial, we will walk you through some of the aspects of our study, and how we used the MimicLabs Dataset to enable them.</p>
+<section id="target-task">
+<h2>Target task<a class="headerlink" href="#target-task" title="Link to this heading">#</a></h2>
+<p>We define the target using a BDDL.</p>
+<!-- example target BDDL -->
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
-<section id="mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">
-<h2>mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module<a class="headerlink" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module" title="Link to this heading">#</a></h2>
+<section id="retrieving-demos-with-matching-objects">
+<h2>Retrieving demos with matching objects<a class="headerlink" href="#retrieving-demos-with-matching-objects" title="Link to this heading">#</a></h2>
+<!-- what can be done, in code, to retrieve the right demonstrations -->
 </section>
-<section id="mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">
-<h2>mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module<a class="headerlink" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module" title="Link to this heading">#</a></h2>
+<section id="retrieving-demos-with-matching-camera-poses">
+<h2>Retrieving demos with matching camera poses<a class="headerlink" href="#retrieving-demos-with-matching-camera-poses" title="Link to this heading">#</a></h2>
+</section>
+<section id="retrieving-demos-with-matching-spatial-arrangements">
+<h2>Retrieving demos with matching spatial arrangements<a class="headerlink" href="#retrieving-demos-with-matching-spatial-arrangements" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -363,6 +376,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="study_design.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Design a study</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="policy_learning.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Policy learning with Robomimic</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -379,9 +410,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-task">Target task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-demos-with-matching-objects">Retrieving demos with matching objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-demos-with-matching-camera-poses">Retrieving demos with matching camera poses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-demos-with-matching-spatial-arrangements">Retrieving demos with matching spatial arrangements</a></li>
 </ul>
   </nav></div>
 

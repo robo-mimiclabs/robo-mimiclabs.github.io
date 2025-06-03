@@ -43,7 +43,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Welcome to MimicLabs!" href="getting_started/installation.html" />
+    <link rel="next" title="Welcome to MimicLabs!" href="getting_started/welcome.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,19 +151,31 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Welcome to MimicLabs!</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="getting_started/welcome.html">Welcome to MimicLabs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/setup_devices.html">Setting up Data Collection Devices</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MimicLabs Datasets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started/download_datasets.html">MimicLabs Study Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="workflow/1_task_suite_creation.html">Creating a new suite of tasks in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow/2_demo_collection.html">Data collection in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow/3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/1_task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/2_demo_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tutorials/study_design.html">Design a study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix/fixtures.html">Fixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/scenes.html">Scenes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
 <ul class="nav bd-sidenav">
@@ -337,8 +349,8 @@ document.write(`
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Welcome to MimicLabs!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html#installation">Installation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/welcome.html">Welcome to MimicLabs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#setting-up-your-conda-environment">1. Setting up your conda environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#installing-supporting-libraries">2. Installing supporting libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#installing-mimiclabs">3. Installing MimicLabs</a></li>
@@ -363,22 +375,52 @@ document.write(`
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workflow/1_task_suite_creation.html">Creating a new suite of tasks in MimicLabs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="workflow/1_task_suite_creation.html#create-your-own-task">Create your own task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/1_task_suite_creation.html">Task Suites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/1_task_suite_creation.html#create-your-own-task">Create your own task</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="workflow/2_demo_collection.html">Data collection in MimicLabs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="workflow/2_demo_collection.html#collecting-expert-demonstrations">Collecting expert demonstrations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow/2_demo_collection.html#controls">Controls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/2_demo_collection.html">Data Collection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/2_demo_collection.html#collecting-expert-demonstrations">Collecting expert demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/2_demo_collection.html#controls">Controls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="workflow/3_dataset_expansion.html">Dataset expansion using MimicGen</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="workflow/3_dataset_expansion.html#preparing-your-source-demonstrations">Preparing your source demonstrations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workflow/3_dataset_expansion.html#creating-mimicgen-configs-and-generation-jobs">Creating MimicGen configs and generation jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/3_dataset_expansion.html#preparing-your-source-demonstrations">Preparing your source demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/3_dataset_expansion.html#creating-mimicgen-configs-and-generation-jobs">Creating MimicGen configs and generation jobs</a></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/study_design.html">Design a study</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/study_design.html#testing-compositional-generalization">Testing compositional generalization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/using_mimiclabs_datasets.html#target-task">Target task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/using_mimiclabs_datasets.html#retrieving-demos-with-matching-objects">Retrieving demos with matching objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/using_mimiclabs_datasets.html#retrieving-demos-with-matching-camera-poses">Retrieving demos with matching camera poses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/using_mimiclabs_datasets.html#retrieving-demos-with-matching-spatial-arrangements">Retrieving demos with matching spatial arrangements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendix/fixtures.html">Fixtures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix/fixtures.html#cabinets">Cabinets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/fixtures.html#microwaves">Microwaves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/fixtures.html#coffee-machine">Coffee Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/scenes.html">Scenes</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -409,7 +451,7 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="getting_started/installation.html"
+       href="getting_started/welcome.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

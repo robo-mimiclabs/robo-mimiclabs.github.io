@@ -43,7 +43,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/download_datasets';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating a new suite of tasks in MimicLabs" href="../workflow/1_task_suite_creation.html" />
+    <link rel="next" title="Task Suites" href="../modules/1_task_suite_creation.html" />
     <link rel="prev" title="Setting up Data Collection Devices" href="setup_devices.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -150,19 +150,31 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Welcome to MimicLabs!</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to MimicLabs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup_devices.html">Setting up Data Collection Devices</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MimicLabs Datasets</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">MimicLabs Study Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../workflow/1_task_suite_creation.html">Creating a new suite of tasks in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/2_demo_collection.html">Data collection in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/1_task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/2_demo_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/study_design.html">Design a study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/fixtures.html">Fixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/scenes.html">Scenes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
 <ul class="nav bd-sidenav">
@@ -344,7 +356,7 @@ document.write(`
 <section id="using-provided-scripts-recommended">
 <h3>Using provided scripts (recommended)<a class="headerlink" href="#using-provided-scripts-recommended" title="Link to this heading">#</a></h3>
 <p>You can also download all datasets using the provided script (CAUTION: this will download ~115GB of data):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_MIMICLABS&gt;/mimiclabs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimiclabs
 $<span class="w"> </span>python<span class="w"> </span>scripts/download_mimiclabs_datasets.py<span class="w"> </span>--download_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;
 </pre></div>
 </div>
@@ -361,8 +373,8 @@ $<span class="w"> </span>python<span class="w"> </span>scripts/download_mimiclab
 <section id="add-image-observations-to-datasets">
 <h2>Add image observations to datasets<a class="headerlink" href="#add-image-observations-to-datasets" title="Link to this heading">#</a></h2>
 <p>Downloaded datasets only contain low-dim observations. To add image observations to the downloaded datasets, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_MIMICLABS&gt;/mimiclabs
-$<span class="w"> </span>python<span class="w"> </span>scripts/add_obs_to_mimiclabs_datasets.py<span class="w"> </span>--input_root_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;<span class="w"> </span>--output_root_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimiclabs
+$<span class="w"> </span>python<span class="w"> </span>scripts/add_obs_to_mimiclabs_datasets.py<span class="w"> </span>--input_root_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;/mimiclabs_study<span class="w"> </span>--output_root_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;/mimiclabs_study
 </pre></div>
 </div>
 <p>This will generate a script called <code class="docutils literal notranslate"><span class="pre">add_obs_to_mimiclabs_datasets.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> directory, which you can run using:</p>
@@ -394,11 +406,11 @@ $<span class="w"> </span>./scripts/add_obs_to_mimiclabs_datasets.sh
       </div>
     </a>
     <a class="right-next"
-       href="../workflow/1_task_suite_creation.html"
+       href="../modules/1_task_suite_creation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating a new suite of tasks in MimicLabs</p>
+        <p class="prev-next-title">Task Suites</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

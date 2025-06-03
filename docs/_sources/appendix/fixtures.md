@@ -1,10 +1,10 @@
-# Fixtures in MimicLabs
+# Fixtures
 
 We list here all supported fixtures that are currently supported in MimicLabs, and their respective configs for placement arrangements.
 
 Credits to the authors of LIBERO for setting up the base assets that enabled us to expand on.
 
-## 3-drawer Cabinets
+## Cabinets
 
 ### Specifying cabinet placement
 

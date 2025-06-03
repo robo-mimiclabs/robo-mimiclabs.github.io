@@ -1,10 +1,3 @@
-# Welcome to MimicLabs!
-
-You can use this repository to:
-1. build your own tasks for a robot learning study
-2. collect expert human teleoperated demonstrations
-3. expand your datasets using MimicGen
-
 # Installation
 
 ### 1. Setting up your conda environment
@@ -33,6 +26,7 @@ Run the following commands to install **Robosuite**, **LIBERO**, **MimicGen**, a
 (mimiclabs)$ cd robocasa
 (mimiclabs)$ pip install -e .
 # next: follow instructions on their github to download robocasa assets
+(mimiclabs)$ cd ..
 
 # install Robosuite
 (mimiclabs)$ git clone https://github.com/ARISE-Initiative/robosuite.git
@@ -48,6 +42,11 @@ Run the following commands to install **Robosuite**, **LIBERO**, **MimicGen**, a
 (mimiclabs)$ pip install -e .
 (mimiclabs)$ pip install -r requirements.txt
 ```
+
+<div class="admonition warning">
+    <p class="admonition-title">Warning: Check MuJoCo version</p>
+    Make sure you have mujoco==3.1.1 installed. Later versions might throw errors when initializing certain scenes. 
+</div>
 
 ### 4. Downloading MimicLabs assets
 ```bash

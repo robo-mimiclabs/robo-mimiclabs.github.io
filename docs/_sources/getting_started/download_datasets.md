@@ -12,7 +12,7 @@ You can download all datasets from [Hugging Face](https://huggingface.co/dataset
 
 You can also download all datasets using the provided script (CAUTION: this will download ~115GB of data):
 ```bash
-$ cd <PATH_TO_MIMICLABS>/mimiclabs
+$ cd <PATH_TO_THIS_REPO>/mimiclabs/mimiclabs
 $ python scripts/download_mimiclabs_datasets.py --download_dir <YOUR_DOWNLOAD_DIR>
 ```
 
@@ -30,8 +30,8 @@ $ python scripts/download_mimiclabs_datasets.py --download_dir <YOUR_DOWNLOAD_DI
 
 Downloaded datasets only contain low-dim observations. To add image observations to the downloaded datasets, run:
 ```bash
-$ cd <PATH_TO_MIMICLABS>/mimiclabs
-$ python scripts/add_obs_to_mimiclabs_datasets.py --input_root_dir <YOUR_DOWNLOAD_DIR> --output_root_dir <YOUR_DOWNLOAD_DIR>
+$ cd <PATH_TO_THIS_REPO>/mimiclabs/mimiclabs
+$ python scripts/add_obs_to_mimiclabs_datasets.py --input_root_dir <YOUR_DOWNLOAD_DIR>/mimiclabs_study --output_root_dir <YOUR_DOWNLOAD_DIR>/mimiclabs_study
 ```
 This will generate a script called `add_obs_to_mimiclabs_datasets.sh` in the `scripts` directory, which you can run using:
 ```bash

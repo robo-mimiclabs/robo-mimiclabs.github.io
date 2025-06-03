@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>mimiclabs.envs.problems package &#8212; mimiclabs 1.0 documentation</title>
+    <title>Tuning MimicGen &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
     <script src="../static/doctools.js?v=9a2dae69"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/mimiclabs.envs.problems';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tuning_mimicgen';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -105,6 +105,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -164,9 +166,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/study_design.html">Design a study</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="study_design.html">Design a study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policy_learning.html">Policy learning with Robomimic</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
 <ul class="nav bd-sidenav">
@@ -231,7 +233,7 @@
       
       
       
-      <li><a href="../_sources/api/mimiclabs.envs.problems.rst" target="_blank"
+      <li><a href="../_sources/tutorials/tuning_mimicgen.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -241,7 +243,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -315,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>mimiclabs.envs.problems package</h1>
+    <h1>Tuning MimicGen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,9 +327,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-source-dataset">Preparing source dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-datasets">Generating datasets</a></li>
 </ul>
             </nav>
         </div>
@@ -339,16 +340,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mimiclabs-envs-problems-package">
-<h1>mimiclabs.envs.problems package<a class="headerlink" href="#mimiclabs-envs-problems-package" title="Link to this heading">#</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+  <section id="tuning-mimicgen">
+<h1>Tuning MimicGen<a class="headerlink" href="#tuning-mimicgen" title="Link to this heading">#</a></h1>
+<p>Important scripts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mimiclabs</span><span class="o">/</span><span class="n">mimicgen</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">prepare_src_dataset</span><span class="o">.</span><span class="n">py</span>
+<span class="n">mimiclabs</span><span class="o">/</span><span class="n">mimicgen</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">generate_dataset</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<section id="preparing-source-dataset">
+<h2>Preparing source dataset<a class="headerlink" href="#preparing-source-dataset" title="Link to this heading">#</a></h2>
 </section>
-<section id="mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">
-<h2>mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module<a class="headerlink" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module" title="Link to this heading">#</a></h2>
-</section>
-<section id="mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">
-<h2>mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module<a class="headerlink" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module" title="Link to this heading">#</a></h2>
+<section id="generating-datasets">
+<h2>Generating datasets<a class="headerlink" href="#generating-datasets" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -379,9 +382,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-source-dataset">Preparing source dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-datasets">Generating datasets</a></li>
 </ul>
   </nav></div>
 

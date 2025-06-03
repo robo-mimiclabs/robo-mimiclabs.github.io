@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Creating a new suite of tasks in MimicLabs &#8212; mimiclabs 1.0 documentation</title>
+    <title>Task Suites &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -40,10 +40,10 @@
     <script src="../static/doctools.js?v=9a2dae69"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'workflow/1_task_suite_creation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/1_task_suite_creation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data collection in MimicLabs" href="2_demo_collection.html" />
+    <link rel="next" title="Data Collection" href="2_demo_collection.html" />
     <link rel="prev" title="MimicLabs Study Datasets" href="../getting_started/download_datasets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -150,19 +150,31 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Welcome to MimicLabs!</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/welcome.html">Welcome to MimicLabs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/setup_devices.html">Setting up Data Collection Devices</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MimicLabs Datasets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/download_datasets.html">MimicLabs Study Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workflows</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a new suite of tasks in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_demo_collection.html">Data collection in MimicLabs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dataset_expansion.html">Dataset expansion using MimicGen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_demo_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/study_design.html">Design a study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/fixtures.html">Fixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/scenes.html">Scenes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
 <ul class="nav bd-sidenav">
@@ -221,7 +233,7 @@
       
       
       
-      <li><a href="../_sources/workflow/1_task_suite_creation.md" target="_blank"
+      <li><a href="../_sources/modules/1_task_suite_creation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Creating a new suite of tasks in MimicLabs</h1>
+    <h1>Task Suites</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -336,12 +348,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="creating-a-new-suite-of-tasks-in-mimiclabs">
-<h1>Creating a new suite of tasks in MimicLabs<a class="headerlink" href="#creating-a-new-suite-of-tasks-in-mimiclabs" title="Link to this heading">#</a></h1>
-<section id="create-your-own-task">
-<h2>Create your own task<a class="headerlink" href="#create-your-own-task" title="Link to this heading">#</a></h2>
+  <section id="task-suites">
+<h1>Task Suites<a class="headerlink" href="#task-suites" title="Link to this heading">#</a></h1>
 <p>You can create your own suite of tasks in MimicLabs by cerating a path under <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimiclabs/task_suites</span></code>. Each task suite can contain multiple tasks each represented by a BDDL file. We use the BDDL infrastructure setup by LIBERO and extend it to include the ability to specify camera poses, textures, and demonstration states for MimicGen.</p>
 <p>Below we discuss all the critical components that make up a task config in BDDL. An example task suite is available in <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimiclabs/task_suites/test_suite</span></code>.</p>
+<section id="create-your-own-task">
+<h2>Create your own task<a class="headerlink" href="#create-your-own-task" title="Link to this heading">#</a></h2>
 <section id="scene">
 <h3>Scene<a class="headerlink" href="#scene" title="Link to this heading">#</a></h3>
 <p>The first thing to provide in a task BDDL is the scene for your task. Same as LIBERO, we define each scene as a <code class="docutils literal notranslate"><span class="pre">problem</span></code> in the BDDL, which contains the specs for the scene background, the table geometry, and the robot positioning with respect to the table.</p>
@@ -512,7 +524,7 @@ c. put the bowl in the drawer </br></p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data collection in MimicLabs</p>
+        <p class="prev-next-title">Data Collection</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
