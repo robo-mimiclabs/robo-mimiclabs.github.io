@@ -31,6 +31,4 @@ The above script will generate config templates for MimicGen as JSON files under
 $ ./exps/<YOUR/TASK/SUITE>/jobs.sh
 ```
 
-Each data data generation job runs `mimiclabs/mimicgen/scripts/generate_dataset.py`. Below are some useful flags to this script:
-
-- `--render`: pass this to render demo collection playback to screen
+Each data data generation job runs `mimiclabs/mimicgen/scripts/generate_dataset.py`.

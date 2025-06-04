@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tuning MimicGen &#8212; mimiclabs 1.0 documentation</title>
+    <title>Working with MimicGen in MimicLabs &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -43,6 +43,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tuning_mimicgen';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fixtures" href="../appendix/fixtures.html" />
+    <link rel="prev" title="Policy learning with Robomimic" href="policy_learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -105,8 +107,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -165,10 +165,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="study_design.html">Design a study</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="policy_learning.html">Policy learning with Robomimic</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Working with MimicGen in MimicLabs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
 <ul class="nav bd-sidenav">
@@ -317,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tuning MimicGen</h1>
+    <h1>Working with MimicGen in MimicLabs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,7 +328,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-source-dataset">Preparing source dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-source-demonstrations">Preparing your source demonstrations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mg-mimiclabs-interface-class">The MG_MimicLabs interface class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-mimicgen-configs-and-generation-jobs">Creating MimicGen configs and generation jobs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-datasets">Generating datasets</a></li>
 </ul>
             </nav>
@@ -340,18 +345,123 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="tuning-mimicgen">
-<h1>Tuning MimicGen<a class="headerlink" href="#tuning-mimicgen" title="Link to this heading">#</a></h1>
-<p>Important scripts:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mimiclabs</span><span class="o">/</span><span class="n">mimicgen</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">prepare_src_dataset</span><span class="o">.</span><span class="n">py</span>
-<span class="n">mimiclabs</span><span class="o">/</span><span class="n">mimicgen</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">generate_dataset</span><span class="o">.</span><span class="n">py</span>
+  <section id="working-with-mimicgen-in-mimiclabs">
+<h1>Working with MimicGen in MimicLabs<a class="headerlink" href="#working-with-mimicgen-in-mimiclabs" title="Link to this heading">#</a></h1>
+<p>We provide a detailed description of how we automate integration with MimicGen, and how you can tune it for your work.</p>
+<p>Some important scripts are:</p>
+<ol class="arabic simple">
+<li><p>Preparing source demonstrations: <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/scripts/prepare_src_dataset.py</span></code></p></li>
+<li><p>Creating datagen configs: <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/scripts/generate_configs_and_jobs.py</span></code></p></li>
+<li><p>Generating datasets: <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/scripts/generate_dataset.py</span></code></p></li>
+</ol>
+<section id="preparing-your-source-demonstrations">
+<h2>Preparing your source demonstrations<a class="headerlink" href="#preparing-your-source-demonstrations" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">prepare_src_dataset.py</span></code> script is used to add object-centric information to source demonstrations before they can be used for dataset expansion. Below are all paramaeters that can be changed in the this script.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Argument</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>–dataset</p></td>
+<td class="text-left"><p>path to source hdf5 dataset (after post-processing), which will be modified in-place</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–env_interface</p></td>
+<td class="text-left"><p>interface class to use for this source dataset. default is <code class="docutils literal notranslate"><span class="pre">MG_MimicLabs</span></code>. We built this class to extract object-centric info about demos using <code class="docutils literal notranslate"><span class="pre">demonstration</span></code> states in BDDL</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>–env_interface_type</p></td>
+<td class="text-left"><p>type of environment interface; we set it to <code class="docutils literal notranslate"><span class="pre">robosuite</span></code> by default and is provided by MimicGen</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–n</p></td>
+<td class="text-left"><p>only process that many trajectories (used for debugging)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>–filter_key</p></td>
+<td class="text-left"><p>filters the source demos to be <code class="docutils literal notranslate"><span class="pre">source_hdf5_file[f&quot;mask/{filter_key}&quot;]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–output</p></td>
+<td class="text-left"><p>path to output hdf5; if not specified, dataset is modified in place</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="the-mg-mimiclabs-interface-class">
+<h3>The MG_MimicLabs interface class<a class="headerlink" href="#the-mg-mimiclabs-interface-class" title="Link to this heading">#</a></h3>
+<p>Preparing source demonstrations relies on a MimicGen environment interface that we define for all tasks described in MimicLabs, called <code class="docutils literal notranslate"><span class="pre">MG_MimicLabs</span></code>. It is a subclass of the <a class="reference external" href="https://github.com/NVlabs/mimicgen/blob/4c7b46e6a912c49cf9072e4c0f873e1aadd42b24/mimicgen/env_interfaces/robosuite.py#L17">RobosuiteInterface</a> class in MimicGen, and overrides its <code class="docutils literal notranslate"><span class="pre">get_object_poses()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals()</span></code> functions. We define this interface class in <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/env_interface.py</span></code>.</p>
+<p>This class uses the <code class="docutils literal notranslate"><span class="pre">demonstration</span></code> states in the BDDL to convert them into subtask keys that are added to <code class="docutils literal notranslate"><span class="pre">source_hdf5_file[f&quot;data/demo_i/datagen_info&quot;]</span></code>. For example, for the given <code class="docutils literal notranslate"><span class="pre">demonstration</span></code> states,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(:</span><span class="n">demonstration</span>
+    <span class="p">(:</span><span class="n">Open</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">Grasp</span> <span class="n">object_1</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">In</span> <span class="n">object_1</span> <span class="n">wooden_cabinet_1_top_region</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<section id="preparing-source-dataset">
-<h2>Preparing source dataset<a class="headerlink" href="#preparing-source-dataset" title="Link to this heading">#</a></h2>
+<p>the following key-value pairs are added for each timestep</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;subtask_1_open_wooden_cabinet_1_top_region&quot;</span><span class="p">:</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="s2">&quot;wooden_cabinet_1_top_region&quot;</span><span class="p">)</span>
+<span class="s2">&quot;subtask_2_grasp_object_1&quot;</span><span class="p">:</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;grasp&quot;</span><span class="p">,</span> <span class="s2">&quot;object_1&quot;</span><span class="p">)</span>
+<span class="s2">&quot;subtask_3_object_1_wooden_cabinet_1_top_region&quot;</span><span class="p">:</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;object_1&quot;</span><span class="p">,</span> <span class="s2">&quot;wooden_cabinet_1_top_region&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where eval() is a function that evaluates any predicate in the scene.</p>
+</section>
+</section>
+<section id="creating-mimicgen-configs-and-generation-jobs">
+<h2>Creating MimicGen configs and generation jobs<a class="headerlink" href="#creating-mimicgen-configs-and-generation-jobs" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">generate_configs_and_jobs.py</span></code> is used to create configs for data generation with MimicGen.</p>
+<p>This script calls the <code class="docutils literal notranslate"><span class="pre">generate_mg_config_classes()</span></code> function in <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/config.py</span></code> to generate config classes. The name of each class is the BDDL filename, with a <code class="docutils literal notranslate"><span class="pre">TYPE</span></code> attribute assigned to be the task suite name. This function dynamically creates config classes that inherit from <a class="reference external" href="https://github.com/NVlabs/mimicgen/blob/4c7b46e6a912c49cf9072e4c0f873e1aadd42b24/mimicgen/configs/config.py#L52">MG_Config</a> and registers them with the <a class="reference external" href="https://github.com/NVlabs/mimicgen/blob/4c7b46e6a912c49cf9072e4c0f873e1aadd42b24/mimicgen/configs/config.py#L37">ConfigMeta</a> metaclass. The <code class="docutils literal notranslate"><span class="pre">task_config()</span></code> and <code class="docutils literal notranslate"><span class="pre">obs_config()</span></code> methods are populated based on the parsed BDDL files and args to this function respectively, allowing for flexible task and observation configurations.</p>
+<p>Below are some useful arguments to this script:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Argument</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>–task_suite_name</p></td>
+<td class="text-left"><p>name of task suite to generate demos for</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–source_demos_dir</p></td>
+<td class="text-left"><p>directory containing source demos for the task suite, one subdirectory per task bddl file</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>–generation_dir</p></td>
+<td class="text-left"><p>directory to store generated demos for the task suite, one subdirectory per task bddl file</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–num_demos</p></td>
+<td class="text-left"><p>number of demos to generate for each task bddl</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>–camera_names</p></td>
+<td class="text-left"><p>list of camera names to use for rendering and store to dataset; default is [“agentview”, “robot0_eye_in_hand”]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–camera_height</p></td>
+<td class="text-left"><p>camera height to use for rendering; default is 84</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>–camera_width</p></td>
+<td class="text-left"><p>camera width to use for rendering; default is 84</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="generating-datasets">
 <h2>Generating datasets<a class="headerlink" href="#generating-datasets" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">generate_dataset.py</span></code> is finally used to start data generation using MimicGen given a generated config. An important thing to note is that we call the <code class="docutils literal notranslate"><span class="pre">generate_mg_config_classes()</span></code> from <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/config.py</span></code> in this script to create and register config classes for each BDDL in the task suite.</p>
+<p>Below are some useful arguments to this script:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Argument</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>–config</p></td>
+<td class="text-left"><p>path to MimicGen config json</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>–render</p></td>
+<td class="text-left"><p>pass this to render demo collection playback to screen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -366,6 +476,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="policy_learning.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Policy learning with Robomimic</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix/fixtures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fixtures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -382,7 +510,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-source-dataset">Preparing source dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-source-demonstrations">Preparing your source demonstrations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mg-mimiclabs-interface-class">The MG_MimicLabs interface class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-mimicgen-configs-and-generation-jobs">Creating MimicGen configs and generation jobs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-datasets">Generating datasets</a></li>
 </ul>
   </nav></div>

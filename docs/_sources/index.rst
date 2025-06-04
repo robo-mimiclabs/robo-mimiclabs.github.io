@@ -35,6 +35,7 @@ Welcome to mimiclabs's documentation!
    tutorials/study_design
    tutorials/using_mimiclabs_datasets
    tutorials/policy_learning
+   tutorials/tuning_mimicgen
 
 .. toctree::
    :maxdepth: 2
