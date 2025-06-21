@@ -37,8 +37,8 @@ To expand the collected source demonstrations, follow instructions in the next t
 
 ### Meta Quest
 
-- Left controller: move robot
-- Right controller: move second robot (if applicable)
+- Right controller: move robot
+- Left controller: move second robot (if applicable)
 - A button: save demo at any stage (saving also automatically happens when task is done)
 - B button: delete current demo, and start a new one
 - ctrl+C: discard current demo and exit

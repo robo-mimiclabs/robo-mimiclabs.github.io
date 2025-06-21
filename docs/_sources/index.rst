@@ -7,7 +7,7 @@ Welcome to mimiclabs's documentation!
 =====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Getting Started
 
    getting_started/welcome
@@ -15,13 +15,13 @@ Welcome to mimiclabs's documentation!
    getting_started/setup_devices
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: MimicLabs Datasets
 
    getting_started/download_datasets
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Modules
 
    modules/1_task_suite_creation
@@ -29,7 +29,7 @@ Welcome to mimiclabs's documentation!
    modules/3_dataset_expansion
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Tutorials
 
    tutorials/study_design
@@ -38,7 +38,7 @@ Welcome to mimiclabs's documentation!
    tutorials/tuning_mimicgen
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Scenes and Assets
 
    appendix/fixtures
@@ -46,7 +46,7 @@ Welcome to mimiclabs's documentation!
    appendix/scenes
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Other
 
    other/known_issues

@@ -35,6 +35,12 @@ Run the following commands to install **Robosuite**, **LIBERO**, **MimicGen**, a
 (mimiclabs)$ cd ..
 ```
 
+<div class="admonition note">
+    <p class="admonition-title">Note: Cannot import RoboCasa</p>
+    You might not be able to import robocasa due to robosuite version mismatch. This is completely fine as we'll only require robocasa for assets.
+</div>
+
+
 ### 3. Installing MimicLabs
 ```bash
 (mimiclabs)$ git clone <link_to_this_repo>

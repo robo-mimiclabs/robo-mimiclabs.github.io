@@ -15,12 +15,12 @@ The `prepare_src_dataset.py` script is used to add object-centric information to
 
 | Argument | Description |
 |:--------------------|:--------------------|
-| --dataset | path to source hdf5 dataset (after post-processing), which will be modified in-place |
-| --env_interface | interface class to use for this source dataset. default is `MG_MimicLabs`. We built this class to extract object-centric info about demos using `demonstration` states in BDDL |
-| --env_interface_type | type of environment interface; we set it to `robosuite` by default and is provided by MimicGen |
-| --n | only process that many trajectories (used for debugging) |
-| --filter_key | filters the source demos to be `source_hdf5_file[f"mask/{filter_key}"]` |
-| --output | path to output hdf5; if not specified, dataset is modified in place |
+| dataset | path to source hdf5 dataset (after post-processing), which will be modified in-place |
+| env_interface | interface class to use for this source dataset. default is `MG_MimicLabs`. We built this class to extract object-centric info about demos using `demonstration` states in BDDL |
+| env_interface_type | type of environment interface; we set it to `robosuite` by default and is provided by MimicGen |
+| n | only process that many trajectories (used for debugging) |
+| filter_key | filters the source demos to be `source_hdf5_file[f"mask/{filter_key}"]` |
+| output | path to output hdf5; if not specified, dataset is modified in place |
 
 
 ### The MG_MimicLabs interface class
@@ -53,13 +53,13 @@ Below are some useful arguments to this script:
 
 | Argument | Description |
 |:--------------------|:--------------------|
-| --task_suite_name | name of task suite to generate demos for |
-| --source_demos_dir | directory containing source demos for the task suite, one subdirectory per task bddl file |
-| --generation_dir | directory to store generated demos for the task suite, one subdirectory per task bddl file |
-| --num_demos | number of demos to generate for each task bddl |
-| --camera_names | list of camera names to use for rendering and store to dataset; default is ["agentview", "robot0_eye_in_hand"] |
-| --camera_height | camera height to use for rendering; default is 84 |
-| --camera_width | camera width to use for rendering; default is 84 |
+| task_suite_name | name of task suite to generate demos for |
+| source_demos_dir | directory containing source demos for the task suite, one subdirectory per task bddl file |
+| generation_dir | directory to store generated demos for the task suite, one subdirectory per task bddl file |
+| num_demos | number of demos to generate for each task bddl |
+| camera_names | list of camera names to use for rendering and store to dataset; default is ["agentview", "robot0_eye_in_hand"] |
+| camera_height | camera height to use for rendering; default is 84 |
+| camera_width | camera width to use for rendering; default is 84 |
 
 
 ## Generating datasets
@@ -70,5 +70,5 @@ Below are some useful arguments to this script:
 
 | Argument | Description |
 |:--------------------|:--------------------|
-| --config | path to MimicGen config json |
-| --render | pass this to render demo collection playback to screen |
+| config | path to MimicGen config json |
+| render | pass this to render demo collection playback to screen |

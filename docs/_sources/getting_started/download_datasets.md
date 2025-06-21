@@ -2,7 +2,7 @@
 
 ## Download datasets
 
-We open-source all the datasets used in our study paper, which contains over 300k trajectories across 8 different scenes (`lab1` through `lab8`) that were used to study the effects of different retrieval strategies from a large-scale simulation dataset. We have made low-dimensional observations and actions available for download. You can add image observations to these datasets using instructions in the subsequent sub-section.
+We open-source all the datasets used in our study paper, which contains over 850k trajectories across 8 different scenes (`lab1` through `lab8`) that were used to study the effects of different retrieval strategies from a large-scale simulation dataset. We have made low-dimensional observations and actions available for download. You can add image observations to these datasets using instructions in the subsequent sub-section.
 
 ### Using web URL
 

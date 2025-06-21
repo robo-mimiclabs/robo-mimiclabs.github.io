@@ -349,10 +349,10 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Clone and install <code class="docutils literal notranslate"><span class="pre">oculus_reader</span></code> repository in your conda environment.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rail-berkeley/oculus_reader.git
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oculus_reader
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rail-berkeley/oculus_reader.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oculus_reader
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -360,29 +360,29 @@ document.write(`
 <li><p>Setup adb.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on MacOS</span>
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>android-platform-tools
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>adb<span class="w"> </span>devices
+$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>android-platform-tools
+$<span class="w"> </span>adb<span class="w"> </span>devices
 <span class="c1"># make sure connected device is NOT listed as unauthorized</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>Install oculus_reader APK on the Meta Quest.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oculus_reader
-<span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>install.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oculus_reader
+$<span class="w"> </span>python<span class="w"> </span>install.py
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>Test your installation.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>reader.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>reader.py
 </pre></div>
 </div>
 </section>
 <section id="setting-up-spacemouse-as-a-teleop-device">
 <h2>Setting up SpaceMouse as a teleop device<a class="headerlink" href="#setting-up-spacemouse-as-a-teleop-device" title="Link to this heading">#</a></h2>
 <p>Setting up your SpaceMouse just requires installing <code class="docutils literal notranslate"><span class="pre">hid</span></code> in your python environment.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>hid
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>hid
 </pre></div>
 </div>
 <p>Simply connect the SpaceMouse using a USB cable and follow instructions for collecting demonstrations in MimicLabs.</p>

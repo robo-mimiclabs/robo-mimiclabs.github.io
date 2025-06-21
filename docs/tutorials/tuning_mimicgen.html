@@ -364,22 +364,22 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>–dataset</p></td>
+<tr class="row-even"><td class="text-left"><p>dataset</p></td>
 <td class="text-left"><p>path to source hdf5 dataset (after post-processing), which will be modified in-place</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–env_interface</p></td>
+<tr class="row-odd"><td class="text-left"><p>env_interface</p></td>
 <td class="text-left"><p>interface class to use for this source dataset. default is <code class="docutils literal notranslate"><span class="pre">MG_MimicLabs</span></code>. We built this class to extract object-centric info about demos using <code class="docutils literal notranslate"><span class="pre">demonstration</span></code> states in BDDL</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>–env_interface_type</p></td>
+<tr class="row-even"><td class="text-left"><p>env_interface_type</p></td>
 <td class="text-left"><p>type of environment interface; we set it to <code class="docutils literal notranslate"><span class="pre">robosuite</span></code> by default and is provided by MimicGen</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–n</p></td>
+<tr class="row-odd"><td class="text-left"><p>n</p></td>
 <td class="text-left"><p>only process that many trajectories (used for debugging)</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>–filter_key</p></td>
+<tr class="row-even"><td class="text-left"><p>filter_key</p></td>
 <td class="text-left"><p>filters the source demos to be <code class="docutils literal notranslate"><span class="pre">source_hdf5_file[f&quot;mask/{filter_key}&quot;]</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–output</p></td>
+<tr class="row-odd"><td class="text-left"><p>output</p></td>
 <td class="text-left"><p>path to output hdf5; if not specified, dataset is modified in place</p></td>
 </tr>
 </tbody>
@@ -417,25 +417,25 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>–task_suite_name</p></td>
+<tr class="row-even"><td class="text-left"><p>task_suite_name</p></td>
 <td class="text-left"><p>name of task suite to generate demos for</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–source_demos_dir</p></td>
+<tr class="row-odd"><td class="text-left"><p>source_demos_dir</p></td>
 <td class="text-left"><p>directory containing source demos for the task suite, one subdirectory per task bddl file</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>–generation_dir</p></td>
+<tr class="row-even"><td class="text-left"><p>generation_dir</p></td>
 <td class="text-left"><p>directory to store generated demos for the task suite, one subdirectory per task bddl file</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–num_demos</p></td>
+<tr class="row-odd"><td class="text-left"><p>num_demos</p></td>
 <td class="text-left"><p>number of demos to generate for each task bddl</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>–camera_names</p></td>
+<tr class="row-even"><td class="text-left"><p>camera_names</p></td>
 <td class="text-left"><p>list of camera names to use for rendering and store to dataset; default is [“agentview”, “robot0_eye_in_hand”]</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–camera_height</p></td>
+<tr class="row-odd"><td class="text-left"><p>camera_height</p></td>
 <td class="text-left"><p>camera height to use for rendering; default is 84</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>–camera_width</p></td>
+<tr class="row-even"><td class="text-left"><p>camera_width</p></td>
 <td class="text-left"><p>camera width to use for rendering; default is 84</p></td>
 </tr>
 </tbody>
@@ -453,10 +453,10 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>–config</p></td>
+<tr class="row-even"><td class="text-left"><p>config</p></td>
 <td class="text-left"><p>path to MimicGen config json</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>–render</p></td>
+<tr class="row-odd"><td class="text-left"><p>render</p></td>
 <td class="text-left"><p>pass this to render demo collection playback to screen</p></td>
 </tr>
 </tbody>

@@ -305,7 +305,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -321,6 +323,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-dataset">MimicLabs Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -332,13 +343,34 @@ document.write(`
                   
   <section id="welcome-to-mimiclabs">
 <h1>Welcome to MimicLabs!<a class="headerlink" href="#welcome-to-mimiclabs" title="Link to this heading">#</a></h1>
+<p>Welcome to MimicLabs, your one-stop place for collecting and generating datasets for table-top manipulation! MimicLabs provides a framework for describing a suite of MuJoCo-based tasks, collecting expert demonstrations, and large-scale data generation using MimicGen.</p>
 <p>You can use this repository to:</p>
 <ol class="arabic simple">
 <li><p>build your own tasks for a robot learning study</p></li>
 <li><p>collect expert human teleoperated demonstrations</p></li>
 <li><p>expand your datasets using MimicGen</p></li>
 </ol>
-<!-- TODO --></section>
+<p>This is also the official repository for the study paper ‘’What Matters in Learning from Large-Scale Datasets for Robot Manipulation’’ appearing at ICLR 2025.</p>
+<p>In this repo, we leverage various open-source projects, including Robosuite, LIBERO, RoboCasa, and MimicGen. We thank their authors for making their code publicly available.</p>
+<section id="mimiclabs-dataset">
+<h2>MimicLabs Dataset<a class="headerlink" href="#mimiclabs-dataset" title="Link to this heading">#</a></h2>
+<img src="../images/mimiclabs-dataset.jpg">
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you find this repo useful, please cite in your work:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span>
+<span class="nl">saxena2025mimiclabs</span><span class="p">,</span>
+<span class="w">    </span><span class="na">title</span><span class="p">=</span><span class="s">{What Matters in Learning from Large-Scale Datasets for Robot Manipulation}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">author</span><span class="p">=</span><span class="s">{Vaibhav Saxena, Matthew Bronars, Nadun Ranawaka Arachchige, Kuancheng Wang, Woo Chul Shin, Soroush Nasiriany, Ajay Mandlekar, Danfei Xu}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">booktitle</span><span class="p">=</span><span class="s">{The Thirteenth International Conference on Learning Representations}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">year</span><span class="p">=</span><span class="s">{2025}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">url</span><span class="p">=</span><span class="s">{https://openreview.net/forum?id=LqhorpRLIm}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
 
 
                 </article>
@@ -375,6 +407,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-dataset">MimicLabs Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

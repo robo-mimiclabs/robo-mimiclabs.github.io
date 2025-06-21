@@ -328,7 +328,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-compositional-generalization">Testing compositional generalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collector-s-study">Collector’s Study</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-pose">Camera pose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-texture">Object texture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retriever-s-study">Retriever’s Study</a></li>
 </ul>
             </nav>
         </div>
@@ -342,38 +347,190 @@ document.write(`
                   
   <section id="design-a-study">
 <h1>Design a study<a class="headerlink" href="#design-a-study" title="Link to this heading">#</a></h1>
-<p>You can use MimicLabs to design a study for your robot policy. Below we describe a few examples.</p>
-<section id="testing-compositional-generalization">
-<h2>Testing compositional generalization<a class="headerlink" href="#testing-compositional-generalization" title="Link to this heading">#</a></h2>
-<p>To test combinatorial generalization for placement arrangements, you can design a task suite with the following different object placement arrangements.</p>
-<p>Region 1:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">object_init_region</span>
-    <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
-    <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
-        <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span> <span class="o">-</span><span class="mf">0.1</span> <span class="mi">0</span> <span class="mf">0.1</span><span class="p">)</span>
-      <span class="p">)</span>
+<p>You can use MimicLabs to design a dataset composition study for your robot policy. In our study paper, we designed <code class="docutils literal notranslate"><span class="pre">collector</span></code> and <code class="docutils literal notranslate"><span class="pre">retriever</span></code> experiments that drew conclusions about how should practitioners collect new datasets as well as use existing large-scale datasets for co-training their downstream policy.</p>
+<section id="collector-s-study">
+<h2>Collector’s Study<a class="headerlink" href="#collector-s-study" title="Link to this heading">#</a></h2>
+<p>We consider collectors as practitioners who are contributing demonstrations to a large robotics dataset. Since data collection is time-consuming, we seek to understand which dimensions of variation (DVs) should be prioritized for diversity or alignment during data collection to facilitate downstream task learning.</p>
+<section id="camera-pose">
+<h3>Camera pose<a class="headerlink" href="#camera-pose" title="Link to this heading">#</a></h3>
+<p>To understand the importance of camera poses in data collection, we setup a target task and co-train it with datasets that have camera poses sampled in small and large distributions that are mis-aligned with the target camera pose. Camera poses in the target task are sampled in the range below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Camera pose: Shoulder-left / Shoulder-right</span>
+
+<span class="p">(:</span><span class="n">camera</span>
+  <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="mi">120</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="mi">150</span><span class="p">)</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">150</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="o">-</span><span class="mi">120</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
-        <span class="p">(</span><span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span>
-      <span class="p">)</span>
-    <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(:</span><span class="n">unit</span> <span class="n">degrees</span><span class="p">)</span>
+  <span class="p">(:</span><span class="n">jitter_mode</span> <span class="n">normal</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Region 2:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">object_init_region</span>
-    <span class="p">(:</span><span class="n">target</span> <span class="n">table</span><span class="p">)</span>
-    <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
-        <span class="p">(</span><span class="mi">0</span> <span class="mf">0.1</span> <span class="mf">0.2</span> <span class="mf">0.3</span><span class="p">)</span>
-      <span class="p">)</span>
+<p>We create multiple datasets that differ with the target dataset along just one DV, camera pose in this case. Example mis-aligned camera pose distributions are below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Camera pose: Agent-front</span>
+
+<span class="p">(:</span><span class="n">camera</span>
+  <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">15</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="mi">15</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="p">(:</span><span class="n">yaw_rotation</span> <span class="p">(</span>
-        <span class="p">(</span><span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span>
-      <span class="p">)</span>
-    <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(:</span><span class="n">unit</span> <span class="n">degrees</span><span class="p">)</span>
+  <span class="p">(:</span><span class="n">jitter_mode</span> <span class="n">uniform</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Camera pose: Agent-front / Agent-left</span>
+
+<span class="p">(:</span><span class="n">camera</span>
+  <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">15</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="mi">15</span><span class="p">)</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">60</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="o">-</span><span class="mi">30</span><span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(:</span><span class="n">unit</span> <span class="n">degrees</span><span class="p">)</span>
+  <span class="p">(:</span><span class="n">jitter_mode</span> <span class="n">uniform</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Camera pose: Agent-front / Agent-right</span>
+
+<span class="p">(:</span><span class="n">camera</span>
+  <span class="p">(:</span><span class="n">ranges</span> <span class="p">(</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">15</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="mi">15</span><span class="p">)</span>
+      <span class="p">(</span><span class="mf">1.2</span> <span class="mi">45</span> <span class="mi">30</span> <span class="mf">1.4</span> <span class="mi">60</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(:</span><span class="n">unit</span> <span class="n">degrees</span><span class="p">)</span>
+  <span class="p">(:</span><span class="n">jitter_mode</span> <span class="n">uniform</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="object-texture">
+<h3>Object texture<a class="headerlink" href="#object-texture" title="Link to this heading">#</a></h3>
+<p>To understand the importance of object textures in data collection, we setup a target task and co-train it with object textures (same geometry) sampled in small and large distributions that are mis-aligned with the target object texture. Textures for the object <code class="docutils literal notranslate"><span class="pre">bowl_1</span></code> in the target task are sampled in the range below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: blue</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">110</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">130</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>We create multiple datasets that differ with the target dataset along just one DV, object texture in this case. Example mis-aligned object texture distributions are below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: green (fixed)</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">50</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">70</span> <span class="mi">200</span> <span class="mi">200</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: green (varied)</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">50</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">70</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: red (fixed)</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">0</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">0</span> <span class="mi">200</span> <span class="mi">200</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: red (varied)</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">170</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">179</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">10</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: red (fixed) / green (fixed)</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">0</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">0</span> <span class="mi">200</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">60</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">60</span> <span class="mi">200</span> <span class="mi">200</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Object texture: red (varied) / green (varied)</span>
+
+<span class="p">(:</span><span class="n">textures</span>
+  <span class="p">(</span><span class="n">bowl_1</span>
+    <span class="p">(:</span><span class="nb">type</span> <span class="n">fractal</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">hsv</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">170</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">179</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">10</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">50</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">59</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">60</span> <span class="mi">150</span> <span class="mi">150</span> <span class="mi">70</span> <span class="mi">255</span> <span class="mi">255</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(:</span><span class="n">turbulence</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">(:</span><span class="n">sigma</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+    <p class="admonition-title">Warning: No comments in BDDL</p>
+    If you choose to use any of the distributions above, make sure to remove comment marked with ##. 
+</div>
+</section>
+</section>
+<section id="retriever-s-study">
+<h2>Retriever’s Study<a class="headerlink" href="#retriever-s-study" title="Link to this heading">#</a></h2>
+<p>A data retriever is a practitioner that seeks to use a pre-existing large-scale dataset with high variation in several DVs (such as DROID) for their specific task of interest. In this setting, we aim to retrieve a sub-dataset to maximize downstream task performance, by aligning some DVs from the retrived co-training dataset with those from the target dataset. For example, we study whether retrieving demonstrations from DROID that have aligned camera poses with that of the downstream setup will improve learning performance.</p>
+<p>To perform this study with minimal confounders, we design multiple datasets performing the same task in target and co-training, with the co-training datasets containing high variation in all DVs and sometimes aligned along one DV to understand the importance of alignment in that DV. Similar to the collector’s study, we design different distributions of the target DV and co-training DVs, but this time the distribution of all the remaining DVs are highly varied.</p>
 </section>
 </section>
 
@@ -422,7 +579,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-compositional-generalization">Testing compositional generalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collector-s-study">Collector’s Study</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-pose">Camera pose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-texture">Object texture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retriever-s-study">Retriever’s Study</a></li>
 </ul>
   </nav></div>
 
