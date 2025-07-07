@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fixtures" href="../appendix/fixtures.html" />
-    <link rel="prev" title="Policy learning with Robomimic" href="policy_learning.html" />
+    <link rel="prev" title="Design a study" href="study_design.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,8 +167,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="study_design.html">Design a study</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="policy_learning.html">Policy learning with Robomimic</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Working with MimicGen in MimicLabs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
@@ -402,7 +400,7 @@ document.write(`
 <span class="s2">&quot;subtask_3_object_1_wooden_cabinet_1_top_region&quot;</span><span class="p">:</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;object_1&quot;</span><span class="p">,</span> <span class="s2">&quot;wooden_cabinet_1_top_region&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>where eval() is a function that evaluates any predicate in the scene.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">eval()</span></code> is a function that evaluates any predicate in the scene. Implementations for different predicate can be found in <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimiclabs/envs/predicates/predicates.py</span></code> which imports multiple implementations from LIBERO.</p>
 </section>
 </section>
 <section id="creating-mimicgen-configs-and-generation-jobs">
@@ -477,12 +475,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="policy_learning.html"
+       href="study_design.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Policy learning with Robomimic</p>
+        <p class="prev-next-title">Design a study</p>
       </div>
     </a>
     <a class="right-next"

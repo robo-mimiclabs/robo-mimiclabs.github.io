@@ -41,7 +41,7 @@ the following key-value pairs are added for each timestep
 "subtask_2_grasp_object_1": eval("grasp", "object_1")
 "subtask_3_object_1_wooden_cabinet_1_top_region": eval("in", "object_1", "wooden_cabinet_1_top_region")
 ```
-where eval() is a function that evaluates any predicate in the scene.
+where `eval()` is a function that evaluates any predicate in the scene. Implementations for different predicate can be found in `mimiclabs/mimiclabs/envs/predicates/predicates.py` which imports multiple implementations from LIBERO.
 
 ## Creating MimicGen configs and generation jobs
 

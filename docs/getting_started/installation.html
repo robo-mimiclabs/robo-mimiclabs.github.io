@@ -167,8 +167,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/study_design.html">Design a study</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/using_mimiclabs_datasets.html">Using MimicLabs Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/policy_learning.html">Policy learning with Robomimic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tuning_mimicgen.html">Working with MimicGen in MimicLabs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scenes and Assets</span></p>
@@ -372,6 +370,12 @@ $<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> <
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robocasa
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 <span class="c1"># next: follow instructions on their github to download robocasa assets</span>
+<span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+
+<span class="c1"># install Robomimic</span>
+<span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARISE-Initiative/robomimic.git
+<span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robomimic<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>v0.5
+<span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 <span class="o">(</span>mimiclabs<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 
 <span class="c1"># install Robosuite</span>

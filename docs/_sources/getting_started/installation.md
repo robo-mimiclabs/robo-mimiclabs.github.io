@@ -28,6 +28,12 @@ Run the following commands to install **Robosuite**, **LIBERO**, **MimicGen**, a
 # next: follow instructions on their github to download robocasa assets
 (mimiclabs)$ cd ..
 
+# install Robomimic
+(mimiclabs)$ git clone https://github.com/ARISE-Initiative/robomimic.git
+(mimiclabs)$ cd robomimic && git checkout v0.5
+(mimiclabs)$ pip install -e .
+(mimiclabs)$ cd ..
+
 # install Robosuite
 (mimiclabs)$ git clone https://github.com/ARISE-Initiative/robosuite.git
 (mimiclabs)$ cd robosuite && git checkout b9d8d3de5e3dfd1724f4a0e6555246c460407daa
