@@ -169,7 +169,7 @@
               </span>
               <!-- Docs Link. -->
               <span class="link-block">
-                <a target="_blank" href="https://robo-mimiclabs.github.io/docs"
+                <a target="_blank" href="https://robo-mimiclabs.github.io/docs/getting_started/welcome.html"
                    class="external-link button is-normal is-rounded is-dark">
                   <span>Documentation</span>
                   </a>
@@ -255,15 +255,18 @@
       <span style="color:rgb(173, 184, 255)">Mimic</span><span style="color:orange">Labs</span> Dataset
     </h2>
     <video class="center" playsinline autoplay loop muted src="../static/videos/mimiclabs_mosaic.mp4" width="100%" style="border-radius:20px;"></video>
+    <h3 class="title is-4"">Available to download from <a href="https://huggingface.co/datasets/vaibhavsaxena11/mimiclabs_datasets/tree/main">🤗 Hugging Face</a></h3>
   </div>
 </section>
+
+
 
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-quarters">
-          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our "Collector" and "Retriever" perspectives are defined using "Diversity" and "Alignment" in robotics datasets</strong></h3>
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We design a study for data <em>Collectors</em> and <em>Retrievers</em>, formulated using "Diversity" and "Alignment" in robotics datasets</strong></h3>
         </div>
       </div>
     </div>
@@ -281,7 +284,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-quarters">
-          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our study reports findings for data collectors</strong></h3>
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our study finds where data <em>Collectors</em> should focus efforts for maximal downstream performance boost</strong></h3>
         </div>
       </div>
     </div>
@@ -301,7 +304,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-quarters">
-          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>... and for users of large-scale robotics datasets</strong></h3>
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>And how should users of large-scale robotics datasets <em>retrieve</em> datasets for their tasks</strong></h3>
         </div>
       </div>
     </div>
@@ -309,10 +312,10 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop has-text-centered">
-        <div class="publication-video">
-          <img src="../static/images/takeaways-retriever.png" alt="">
-        </div>
+  <div class="columns is-centered">
+    <div class="column is-three-quarters">
+      <img src="../static/images/takeaways-retriever.png" width="100%" style="border-radius:20px;">
+    </div>
   </div>
 </section>
 
@@ -321,85 +324,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-quarters">
-          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We perform retrieval on the large-scale <span style="color:rgb(173, 184, 255)">Mimic</span><span style="color:orange">Labs</span> Dataset</strong></h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <!-- <h2 class="title is-3">Retrieval on the MimicLabs Dataset</h2> -->
-
-    <p>We retrieve datasets to train robot policies for the following target tasks:</p>
-    <br>
-
-    <div class="columns is-centered">
-      <div class="column">
-        <h4 class="title is-5">Bin carrot</h4>
-        <div class="content">
-          <video id="target-only" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
-            <source src="../static/videos/mimiclabs/simDroidLab1Scene1BinCarrot0BinCarrot0Scene1CamPoseShoulderLNormObjSpatL20RecepSpatR/demo_0.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column">
-        <h4 class="title is-5">Bin bowl</h4>
-        <div class="columns is-centered">
-          <div class="column content">
-            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
-              <source src="../static/videos/mimiclabs/simDroidLab2Scene2BinBowl2BinBowl2Scene2CamPoseShoulderRNormObjSpatR20RecepSpatL/demo_0.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <h4 class="title is-5">Clear table</h4>
-        <div class="columns is-centered">
-          <div class="column content">
-            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
-              <source src="../static/videos/mimiclabs/simDroidLab3Scene4OpenTopDrawerWoodenCabinetPutBowl1OpenTopDrawerWoodenCabinetPutBowl1Scene4CamPoseAgentFNormObjSpatL20RecepSpatR/demo_0.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <h4 class="title is-5">Microwave teapot</h4>
-        <div class="columns is-centered">
-          <div class="column content">
-            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
-              <source src="../static/videos/mimiclabs/simDroidLab5Scene6PutTeapot0CloseMicrowavePutTeapot0CloseMicrowaveScene6CamPoseShoulderRNormObjSpatR20RecepSpatL/demo_0.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <h4 class="title is-5">Make coffee</h4>
-        <div class="columns is-centered">
-          <div class="column content">
-            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
-              <source src="../static/videos/mimiclabs/simDroidLab7Scene8PutPodWhiteCoffeeMachinePutPodWhiteCoffeeMachineScene8CamPoseShoulderRNormObjSpatC20RecepSpatL/demo_0.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p>We summarize our findings in the table below, that shows success rates on all five target tasks shown above when co-training on different dataset splits in the MimicLabs dataset. Our structured demonstration generation pipeline allows for counterfactual retrival on the absence of the required skill for grasping the required object or accessign the receptacle.</p>
-
-    <img src="../static/images/retriever-mimiclabs.png" />
-
-  </div>
-</section>
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-three-quarters">
-          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We validate our takeaways in the real-world, retrieving demonstrations from the DROID dataset</strong></h3>
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our takeaways for data retrieval hold in the real-world, on existing large-scale datasets!</strong></h3>
         </div>
       </div>
     </div>
@@ -447,7 +372,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Real robot videos. -->
-    <h2 class="title is-3">Real-robot Experiments - retrieval from DROID</h2>
+    <h2 class="title is-3">More real-robot results - co-training with retrieval from DROID</h2>
 
     <p>Below are some videos showing rollouts for different tasks, with different co-training datasets retrieved from the DROID dataset.</p>
     <br>
@@ -793,6 +718,85 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We also perform retrieval on the large-scale <span style="color:rgb(173, 184, 255)">Mimic</span><span style="color:orange">Labs</span> Dataset</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- <h2 class="title is-3">Retrieval on the MimicLabs Dataset</h2> -->
+
+    <p>We retrieve datasets to train robot policies for the following target tasks:</p>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <h4 class="title is-5">Bin carrot</h4>
+        <div class="content">
+          <video id="target-only" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="../static/videos/mimiclabs/simDroidLab1Scene1BinCarrot0BinCarrot0Scene1CamPoseShoulderLNormObjSpatL20RecepSpatR/demo_0.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Bin bowl</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="../static/videos/mimiclabs/simDroidLab2Scene2BinBowl2BinBowl2Scene2CamPoseShoulderRNormObjSpatR20RecepSpatL/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Clear table</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="../static/videos/mimiclabs/simDroidLab3Scene4OpenTopDrawerWoodenCabinetPutBowl1OpenTopDrawerWoodenCabinetPutBowl1Scene4CamPoseAgentFNormObjSpatL20RecepSpatR/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Microwave teapot</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="../static/videos/mimiclabs/simDroidLab5Scene6PutTeapot0CloseMicrowavePutTeapot0CloseMicrowaveScene6CamPoseShoulderRNormObjSpatR20RecepSpatL/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Make coffee</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="../static/videos/mimiclabs/simDroidLab7Scene8PutPodWhiteCoffeeMachinePutPodWhiteCoffeeMachineScene8CamPoseShoulderRNormObjSpatC20RecepSpatL/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>We summarize our findings in the table below, that shows success rates on all five target tasks shown above when co-training on different dataset splits in the MimicLabs dataset. Our structured demonstration generation pipeline allows for counterfactual retrival on the absence of the required skill for grasping the required object or accessign the receptacle.</p>
+
+    <img src="../static/images/retriever-mimiclabs.png" />
+
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
           <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Study Overview</strong></h3>
         </div>
       </div>
@@ -810,12 +814,12 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Citation</h2>
     <pre><code>@inproceedings{
-        title={What Matters in Learning from Large-Scale Datasets for Robot Manipulation},
-        author={Vaibhav Saxena, Matthew Bronars, Nadun Ranawaka Arachchige, Kuancheng Wang, Woo Chul Shin, Soroush Nasiriany, Ajay Mandlekar, Danfei Xu},
-        booktitle={The Thirteenth International Conference on Learning Representations},
-        year={2025},
-        url={https://openreview.net/forum?id=LqhorpRLIm}
-      }</code></pre>
+  title={What Matters in Learning from Large-Scale Datasets for Robot Manipulation},
+  author={Vaibhav Saxena, Matthew Bronars, Nadun Ranawaka Arachchige, Kuancheng Wang, Woo Chul Shin, Soroush Nasiriany, Ajay Mandlekar, Danfei Xu},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://arxiv.org/pdf/2506.13536}
+}</code></pre>
   </div>
 </section>
 
