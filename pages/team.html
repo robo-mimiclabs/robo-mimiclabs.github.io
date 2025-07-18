@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Matters in Learning from Large-Scale Datasets for Robot Manipulation</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N71W6JTTPY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N71W6JTTPY');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="icon" href="../static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="index.html">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          See More
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="pages/study.html">
+            Study Paper
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container is-max-desktop has-text-centered">
+  <img src="../static/images/logo-grayscale.png" alt="MimicLabs logo" width="500px">
+</div>
+
+
+<div class="container is-max-desktop has-text-centered">
+  <p><strong>Welcome to MimicLabs! A large-scale initiative that aims to understand how extensive robotics datasets should be collected and employed to effectively enhance imitation learning for robots.</strong></p>
+  <br>
+  <p>Check out our <a href="./pages/study.html">study paper</a>, where we tackle this issue from the ground up -
+  exploring the influence of various factors on the effectiveness of robotic imitation learning, by creating customized large-scale datasets in simulation.
+  </p>
+  <br>
+</div>
+
+<!-- <div class="container is-max-desktop">
+  <p class="title is-3">Video</p>
+  <div style="width: 100%; height: 100; position: relative;"></div>
+    <iframe src="static/videos/overview.mp4" style="position: absolute; width: 100%; height: 100%; left: 0;" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div> -->
+
+<!-- full overview video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <div class="columns is-centered">
+          <div class="column is-centered">
+            <video class="center" playsinline autoplay loop muted controls src="static/videos/overview.mp4" width="100%" style="border-radius:20px;"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Project Members</h2>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/vaibhav_saxena.jpeg" alt="Vaibhav Saxena">
+        </figure>
+        <p class="has-text-centered">Vaibhav Saxena</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/matthew_bronars.jpeg" alt="Matthew Bronars">
+        </figure>
+        <p class="has-text-centered">Matthew Bronars</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/nadun_ranawaka.jpeg" alt="Nadun Ranawaka Arachchige">
+        </figure>
+        <p class="has-text-centered">Nadun Ranawaka Arachchige</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/kuancheng_wang.jpg" alt="Kuancheng Wang">
+        </figure>
+        <p class="has-text-centered">Kuancheng Wang</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/woochul_shin.jpg" alt="Woochul Shin">
+        </figure>
+        <p class="has-text-centered">Woochul Shin</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/soroush_nasiriany.png" alt="Soroush Nasiriany">
+        </figure>
+        <p class="has-text-centered">Soroush Nasiriany</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/ajay_mandlek.png" alt="Ajay Mandlekar">
+        </figure>
+        <p class="has-text-centered">Ajay Mandlekar</p>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image is-128x128" style="margin: 0 auto;">
+          <img class="is-rounded" src="../static/images/members/danfei_xu.jpg" alt="Danfei Xu">
+        </figure>
+        <p class="has-text-centered">Danfei Xu</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://openreview.net/pdf?id=LqhorpRLIm">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p>
+            Template borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">here</a>.
+            <!-- we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

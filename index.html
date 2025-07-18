@@ -38,67 +38,685 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="index.html">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          See More
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="index.html">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
         </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="pages/study.html">
-            Study Paper
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            See More
           </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="pages/team.html">
+              Team
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">What Matters in Learning from Large-Scale Datasets for Robot Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/vaibhavsaxena" target="_blank">Vaibhav Saxena</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://mbronars.github.io/" target="_blank">Matthew Bronars</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/nadun-ranawaka-arachchige-87701b137/" target="_blank">Nadun Ranawaka Arachchige</a><sup>*1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/kuanchengwang/" target="_blank">Kuancheng Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://swc0620.github.io/profile/" target="_blank">Woo Chul Shin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://snasiriany.me/" target="_blank">Soroush Nasiriany</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ai.stanford.edu/~amandlek/" target="_blank">Ajay Mandlekar</a><sup>&dagger;3</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank">Danfei Xu</a><sup>&dagger;1,3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>The University of Texas at Austin</span>
+            <span class="author-block"><sup>3</sup>NVIDIA Research</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="font-size: smaller;"><sup>*</sup>equal contribution,</span>
+            <span class="author-block" style="font-size: smaller;"><sup>&dagger;</sup>equal advising</span>
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><strong>ICLR 2025</strong></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/pdf/2506.13536"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/abs/2506.13536"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://github.com/Gatech-RL2/mimiclabs-priv"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://huggingface.co/datasets/vaibhavsaxena11/mimiclabs_datasets/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+              <!-- Docs Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://robo-mimiclabs.github.io/docs/getting_started/welcome.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Documentation</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
-
   </div>
-</nav>
-
-<div class="container is-max-desktop has-text-centered">
-  <img src="./static/images/logo-grayscale.png" alt="MimicLabs logo" width="500px">
-</div>
+</section>
 
 
-<div class="container is-max-desktop has-text-centered">
-  <p><strong>Welcome to MimicLabs! A large-scale initiative that aims to understand how extensive robotics datasets should be collected and employed to effectively enhance imitation learning for robots.</strong></p>
-  <br>
-  <p>Check out our <a href="./pages/study.html">study paper</a>, where we tackle this issue from the ground up -
-  exploring the influence of various factors on the effectiveness of robotic imitation learning, by creating customized large-scale datasets in simulation.
-  </p>
-  <br>
-</div>
-
-<!-- <div class="container is-max-desktop">
-  <p class="title is-3">Video</p>
-  <div style="width: 100%; height: 100; position: relative;"></div>
-    <iframe src="static/videos/overview.mp4" style="position: absolute; width: 100%; height: 100%; left: 0;" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div> -->
-
-<!-- full overview video -->
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Our software framework generates ~1M robot trajectories to learn from</h2> -->
+        <!-- <div class="publication-video">
+          <iframe src="./static/videos/snippets/overview.mp4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div> -->
+        <video class="center" playsinline autoplay loop muted controls src="./static/videos/snippets/overview.mp4" width="100%" style="border-radius:20px;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our contributions are three-fold</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-three-quarters">
+      <img src="./static/images/contributions-3-fold.png" width="100%" style="border-radius:20px;">
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We build a systematic data collection framework for robot manipulation</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <video class="center" playsinline autoplay loop muted controls src="./static/videos/snippets/software-framework.mp4" width="100%" style="border-radius:20px;"></video>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We leverage our framework to generate a large-scale simulated robotics dataset with over 3K task instances</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">
+      <span style="color:rgb(173, 184, 255)">Mimic</span><span style="color:orange">Labs</span> Dataset
+    </h2>
+    <video class="center" playsinline autoplay loop muted src="./static/videos/mimiclabs_mosaic.mp4" width="100%" style="border-radius:20px;"></video>
+    <h3 class="title is-4"">Available to download from <a href="https://huggingface.co/datasets/vaibhavsaxena11/mimiclabs_datasets/tree/main">🤗 Hugging Face</a></h3>
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We design a study for data <em>Collectors</em> and <em>Retrievers</em>, formulated using "Diversity" and "Alignment" in robotics datasets</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <img src="./static/images/collector-retriever-setup.jpg" alt="">
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our study finds where data <em>Collectors</em> should focus efforts for maximal downstream performance boost</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-three-quarters">
+      <img src="./static/images/takeaways-collector.png" width="100%" style="border-radius:20px;">
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>And how should users of large-scale robotics datasets <em>retrieve</em> datasets for their tasks</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-three-quarters">
+      <img src="./static/images/takeaways-retriever.png" width="100%" style="border-radius:20px;">
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Our takeaways for data retrieval hold in the real-world, on existing large-scale datasets!</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+        <!-- <h2 class="title is-3">Real-world Retrieval Study</h2> -->
+        <div class="publication-video">
+          <iframe src="./static/videos/snippets/marker_in_cup-retrieval.mp4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">MimicLabs Dataset</h2>
+    <p>To understand the effects of dataset composition along various dimensions of variation (DVs), we create a large robotic manipulation dataset with ~1M demonstration trajectories, that we can retrieve for camera poses, backgrounds and textures, spatial arrangements of objects and receptacles, and motions that carry out the tasks.</p>
+    <img src="./static/images/mimiclabs-dataset.jpg" alt="">
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">The Collector's Perspective</h2>
+
+    <p>We design an experiment to understand the effects of variation in different DVs as they enable or hamper skill transfer when co-training with a large dataset. We create multiple target distributions with differing variations for each DV, and experimented co-training with misaligned variations in each DV.</p>
+    <br>
+
+    <div style="text-align: center;">
+      <img src="./static/images/collector-sim.jpg" width="500px" />
+    </div>
+    
+    <p>On the <em>clear table</em> task, this experiment showed how (1) misaligned <em>camera poses</em> and <em>spatial arrangements</em> hamper skill transfer, and (2) diverse <em>camera poses</em> enable transfer in the presence of differing textures. </p>
+    
+  </div>
+</section> -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Real robot videos. -->
+    <h2 class="title is-3">More real-robot results - co-training with retrieval from DROID</h2>
+
+    <p>Below are some videos showing rollouts for different tasks, with different co-training datasets retrieved from the DROID dataset.</p>
+    <br>
+
+    <h3 class="title is-4">Wipe Board</h3>
+
     <div class="columns is-centered">
-      <div class="column is-three-quarters">
+      <!-- Target only. -->
+      <div class="column">
+        <h4 class="title is-5">Target only</h4>
+        <div class="content">
+          <!-- <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p> -->
+          <video id="target-only" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="./static/videos/Wipe_Board/target_only.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Target only. -->
+      <!-- Full DROID co-training. -->
+      <div class="column">
+        <h4 class="title is-5">DROID co-training</h4>
         <div class="columns is-centered">
-          <div class="column is-centered">
-            <video class="center" playsinline autoplay loop muted controls src="static/videos/overview.mp4" width="100%" style="border-radius:20px;"></video>
+          <div class="column content">
+            <!-- <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p> -->
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Wipe_Board/all_DROID.MOV" type="video/mp4">
+            </video>
           </div>
+        </div>
+      </div>
+      <!--/ Full DROID co-training. -->
+      <!-- Retrieve object. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve object</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <!-- <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p> -->
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Wipe_Board/retrieve_object.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve object. -->
+      <!-- Retrieve campose. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve campose</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <!-- <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p> -->
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Wipe_Board/retrieve_campose.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve campose. -->
+      <!-- Retrieve spatial. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve spatial</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <!-- <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p> -->
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Wipe_Board/retrieve_spatial.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve spatial. -->
+    </div>
+
+
+    <h3 class="title is-4">Pour Bowl</h3>
+
+
+    <div class="columns is-centered">
+      <!-- Target only. -->
+      <div class="column">
+        <h4 class="title is-5">Target only</h4>
+        <div class="content">
+          <video id="target-only" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="./static/videos/Pour_bowl/target_only.MOV" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Target only. -->
+      <!-- Full DROID co-training. -->
+      <div class="column">
+        <h4 class="title is-5">DROID co-training</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Pour_bowl/full_DROID.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Full DROID co-training. -->
+      <!-- Retrieve object. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve object</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Pour_bowl/retrieve_object.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve object. -->
+      <!-- Retrieve campose. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve campose</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Pour_bowl/retrieve_campose.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve campose. -->
+      <!-- Retrieve spatial. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve spatial</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Pour_bowl/retrieve_spatial.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve spatial. -->
+    </div>
+
+
+    <h3 class="title is-4">Stack Block</h3>
+
+
+    <div class="columns is-centered">
+      <!-- Target only. -->
+      <div class="column">
+        <h4 class="title is-5">Target only</h4>
+        <div class="content">
+          <video id="target-only" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="./static/videos/Stack_block/target_only.MOV" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Target only. -->
+      <!-- Full DROID co-training. -->
+      <div class="column">
+        <h4 class="title is-5">DROID co-training</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Stack_block/full_DROID.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Full DROID co-training. -->
+      <!-- Retrieve object. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve object</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Stack_block/retrieve_object.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve object. -->
+      <!-- Retrieve campose. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve campose</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Stack_block/retrieve_campose.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve campose. -->
+      <!-- Retrieve spatial. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve spatial</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Stack_block/retrieve_spatial.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve spatial. -->
+    </div>
+
+
+    <!-- <h3 class="title is-4">Baking</h3>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <h4 class="title is-5">Target only</h4>
+        <div class="content">
+          <video id="target-only" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="./static/videos/Baking/target_only.MOV" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">DROID co-training</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Baking/retrieve_all_DROID_1.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Retrieve object</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Baking/retrieve_objects.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Retrieve campose</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Baking/campose.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="title is-5">Retrieve spatial</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Baking/retrieve_spatial.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <h3 class="title is-4">Snack</h3>
+
+    <div class="columns is-centered">
+      <!-- Target only. -->
+      <div class="column">
+        <h4 class="title is-5">Target only</h4>
+        <div class="content">
+          <video id="target-only" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="./static/videos/Snack/target_only_1.MOV" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Target only. -->
+      <!-- Full DROID co-training. -->
+      <div class="column">
+        <h4 class="title is-5">DROID co-training</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Snack/all_DROID.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Full DROID co-training. -->
+      <!-- Retrieve object. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve object</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Snack/retrieve_object.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve object. -->
+      <!-- Retrieve campose. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve campose</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Snack/retreive_campose.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve campose. -->
+      <!-- Retrieve spatial. -->
+      <div class="column">
+        <h4 class="title is-5">Retrieve spatial</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/Snack/retrieve_spatial.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Retrieve spatial. -->
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>We also perform retrieval on the large-scale <span style="color:rgb(173, 184, 255)">Mimic</span><span style="color:orange">Labs</span> Dataset</strong></h3>
         </div>
       </div>
     </div>
@@ -107,57 +725,99 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Project Members</h2>
-    <div class="columns is-multiline is-centered">
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/vaibhav_saxena.jpeg" alt="Vaibhav Saxena">
-        </figure>
-        <p class="has-text-centered">Vaibhav Saxena</p>
+
+    <!-- <h2 class="title is-3">Retrieval on the MimicLabs Dataset</h2> -->
+
+    <p>We retrieve datasets to train robot policies for the following target tasks:</p>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <h4 class="title is-5">Bin carrot</h4>
+        <div class="content">
+          <video id="target-only" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+            <source src="./static/videos/mimiclabs/simDroidLab1Scene1BinCarrot0BinCarrot0Scene1CamPoseShoulderLNormObjSpatL20RecepSpatR/demo_0.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/matthew_bronars.jpeg" alt="Matthew Bronars">
-        </figure>
-        <p class="has-text-centered">Matthew Bronars</p>
+      <div class="column">
+        <h4 class="title is-5">Bin bowl</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/mimiclabs/simDroidLab2Scene2BinBowl2BinBowl2Scene2CamPoseShoulderRNormObjSpatR20RecepSpatL/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/nadun_ranawaka.jpeg" alt="Nadun Ranawaka Arachchige">
-        </figure>
-        <p class="has-text-centered">Nadun Ranawaka Arachchige</p>
+      <div class="column">
+        <h4 class="title is-5">Clear table</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/mimiclabs/simDroidLab3Scene4OpenTopDrawerWoodenCabinetPutBowl1OpenTopDrawerWoodenCabinetPutBowl1Scene4CamPoseAgentFNormObjSpatL20RecepSpatR/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/kuancheng_wang.jpg" alt="Kuancheng Wang">
-        </figure>
-        <p class="has-text-centered">Kuancheng Wang</p>
+      <div class="column">
+        <h4 class="title is-5">Microwave teapot</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/mimiclabs/simDroidLab5Scene6PutTeapot0CloseMicrowavePutTeapot0CloseMicrowaveScene6CamPoseShoulderRNormObjSpatR20RecepSpatL/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/woochul_shin.jpg" alt="Woochul Shin">
-        </figure>
-        <p class="has-text-centered">Woochul Shin</p>
-      </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/soroush_nasiriany.png" alt="Soroush Nasiriany">
-        </figure>
-        <p class="has-text-centered">Soroush Nasiriany</p>
-      </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/ajay_mandlek.png" alt="Ajay Mandlekar">
-        </figure>
-        <p class="has-text-centered">Ajay Mandlekar</p>
-      </div>
-      <div class="column is-one-quarter">
-        <figure class="image is-128x128" style="margin: 0 auto;">
-          <img class="is-rounded" src="./static/images/members/danfei_xu.jpg" alt="Danfei Xu">
-        </figure>
-        <p class="has-text-centered">Danfei Xu</p>
+      <div class="column">
+        <h4 class="title is-5">Make coffee</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%" style="border-radius: 5px;">
+              <source src="./static/videos/mimiclabs/simDroidLab7Scene8PutPodWhiteCoffeeMachinePutPodWhiteCoffeeMachineScene8CamPoseShoulderRNormObjSpatC20RecepSpatL/demo_0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
     </div>
+
+    <p>We summarize our findings in the table below, that shows success rates on all five target tasks shown above when co-training on different dataset splits in the MimicLabs dataset. Our structured demonstration generation pipeline allows for counterfactual retrival on the absence of the required skill for grasping the required object or accessign the receptacle.</p>
+
+    <img src="./static/images/retriever-mimiclabs.png" />
+
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Study Overview</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <img src="./static/images/teaser.jpg" alt="">
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@inproceedings{
+  title={What Matters in Learning from Large-Scale Datasets for Robot Manipulation},
+  author={Vaibhav Saxena, Matthew Bronars, Nadun Ranawaka Arachchige, Kuancheng Wang, Woo Chul Shin, Soroush Nasiriany, Ajay Mandlekar, Danfei Xu},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://arxiv.org/pdf/2506.13536}
+}</code></pre>
   </div>
 </section>
 
