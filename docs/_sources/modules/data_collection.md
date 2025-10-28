@@ -20,7 +20,7 @@ $ python scripts/collect_data.py \
     While the rendered view during demo collection is front-view for ease of demo collection, demos being stored will render using agent-view camera specified in the task BDDL. 
 </div>
 
-For example, you can replace `<YOUR/TASK/SUITE>` with `test_suite` and `<TASK_NAME>` with `test_task`. This will spin-up data collection for the task config located at `mimiclabs/task_suites/test_siute/test_task.bddl` in this repo. Note that `<YOUR/TASK/SUITE>` can be a directory tree and does not necessarily have to be a single directory.
+For example, you can replace `<YOUR/TASK/SUITE>` with `example_suite` and `<TASK_NAME>` with `example_task`. This will spin-up data collection for the task config located at `mimiclabs/task_suites/test_siute/example_task.bddl` in this repo. Note that `<YOUR/TASK/SUITE>` can be a directory tree and does not necessarily have to be a single directory.
 
 You can specify your choice of device by replacing `<DEVICE_NAME>` with `spacemouse` or `quest`.
 
@@ -57,4 +57,25 @@ Some users may face issues locating hid binaries on MacOS. Providing the `DYLD_L
 
 </div>
 
-<!-- TODO add playback_demo.py -->
+## Playing back collected demonstrations
+
+You might want to play back your collected demonstrations to make sure they are stored properly and can be reproduced given all saved simulation parameters. We provide a script to do this.
+
+```bash
+python scripts/playback_demo.py \
+    --dataset_path <PATH/TO/DEMO/FILE> \
+    --control_delta \
+    --video_dir <PATH/TO/VIDEO/DIR> \
+    --render
+```
+
+For example, you can replace `<PATH/TO/DEMO/FILE>` with `./demos/example_suite/example_task/demo_0.hdf5` which can the first demonstration collected for a test task, `<PATH/TO/VIDEO/DIR>` with `./demos/example_suite/example_task/playback` as a temporary directory to store playback videos. The `--control_delta` flag directs the script to play back delta actions. Skipping this flag will replay absolute actions. The `--render` flag forces rendering to screen.
+
+<div class="admonition warning">
+<p class="admonition-title">Warning: trying to playback absolute actions</p>
+
+Absolute actions stored in collected demonstrations are absolute poses extracted from delta commands. Based on the device and control parameters used for data collection, absolute commands may or may not be able to produce expected results. 
+
+For example, for the default control parameters for a SpaceMouse agent that clip delta commands, and data collected using a delta controller, played back absolute commands might overshoot while delta commands would replicate exact same behavior as was demonstrated. For the Meta Quest agent however, our default parameters have no action clipping, and hence absolute commands will replicate demonstrated behavior even if data collection was done using a delta controller.
+
+</div>

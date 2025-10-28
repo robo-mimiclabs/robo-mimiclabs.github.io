@@ -30,7 +30,7 @@ Run the following commands to install **Robosuite**, **LIBERO**, **MimicGen**, a
 
 # install Robomimic
 (mimiclabs)$ git clone https://github.com/ARISE-Initiative/robomimic.git
-(mimiclabs)$ cd robomimic && git checkout v0.5
+(mimiclabs)$ cd robomimic
 (mimiclabs)$ pip install -e .
 (mimiclabs)$ cd ..
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>mimiclabs.envs.problems package &#8212; mimiclabs 1.0 documentation</title>
+    <title>Dataset Expansion using MimicGen &#8212; mimiclabs 1.0 documentation</title>
   
   
   
@@ -37,12 +37,14 @@
   <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../static/documentation_options.js?v=a681ed88"></script>
-    <script src="../static/doctools.js?v=9a2dae69"></script>
+    <script src="../static/doctools.js?v=9bcbadda"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/mimiclabs.envs.problems';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/dataset_expansion';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Design a study" href="../tutorials/study_design.html" />
+    <link rel="prev" title="Data Collection" href="data_collection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,10 +159,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/download_datasets.html">MimicLabs Study Datasets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modules/1_task_suite_creation.html">Task Suites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/2_demo_collection.html">Data Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_collection.html">Data Collection</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataset Expansion using MimicGen</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -230,7 +232,7 @@
       
       
       
-      <li><a href="../_sources/api/mimiclabs.envs.problems.rst" target="_blank"
+      <li><a href="../_sources/modules/dataset_expansion.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -240,7 +242,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -314,7 +316,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>mimiclabs.envs.problems package</h1>
+    <h1>Dataset Expansion using MimicGen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -324,9 +326,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-source-demonstrations">Preparing your source demonstrations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-mimicgen-configs-and-generation-jobs">Creating MimicGen configs and generation jobs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-using-source-demonstrations-across-a-task-suite">Re-using source demonstrations across a task suite</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -338,16 +342,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mimiclabs-envs-problems-package">
-<h1>mimiclabs.envs.problems package<a class="headerlink" href="#mimiclabs-envs-problems-package" title="Link to this heading">#</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+  <section id="dataset-expansion-using-mimicgen">
+<h1>Dataset Expansion using MimicGen<a class="headerlink" href="#dataset-expansion-using-mimicgen" title="Link to this heading">#</a></h1>
+<!-- MimicGen intro -->
+<section id="preparing-your-source-demonstrations">
+<h2>Preparing your source demonstrations<a class="headerlink" href="#preparing-your-source-demonstrations" title="Link to this heading">#</a></h2>
+<p>After collecting your demonstrations, run the following script to add subtask information to the dataset:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimicgen
+$<span class="w"> </span>python<span class="w"> </span>scripts/prepare_src_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>&lt;/PATH/TO/DATASET/....hdf5&gt;<span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+<p>This script defaults to using the <code class="docutils literal notranslate"><span class="pre">MG_MimicLabs</span></code> MimicGen interface for injecting object-centric information into the demo file, which is subsequently needed for the dataset generation. If you wish to use your own interface, make sure to import it in <code class="docutils literal notranslate"><span class="pre">scripts/prepare_src_dataset.py</span></code> and pass the interface name using the <code class="docutils literal notranslate"><span class="pre">--env_interface</span></code> flag.</p>
 </section>
-<section id="mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">
-<h2>mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module<a class="headerlink" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module" title="Link to this heading">#</a></h2>
+<section id="creating-mimicgen-configs-and-generation-jobs">
+<h2>Creating MimicGen configs and generation jobs<a class="headerlink" href="#creating-mimicgen-configs-and-generation-jobs" title="Link to this heading">#</a></h2>
+<p>The MimicGen data generation pipeline requires a set of configurations for each task created by the user as a BDDL. We provide scripts to generate these configs directly from task BDDLs, and subsequently launch data generation jobs. Below is an example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimicgen
+$<span class="w"> </span>python<span class="w"> </span>scripts/generate_configs_and_jobs.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--task_suite_name<span class="w"> </span>&lt;YOUR/TASK/SUITE&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source_demos_dir<span class="w"> </span>&lt;DIR/TO/SOURCE/DEMOS&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--generation_dir<span class="w"> </span>&lt;DIR/TO/GENERATION/DEMOS&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--num_demos<span class="w"> </span>&lt;NUM_DEMOS_PER_TASK&gt;
+</pre></div>
+</div>
+<p>Please see <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/scripts/generate_configs_and_jobs.py</span></code> for additional config parameters that affect the config generation process.</p>
+<p>The above script will generate config templates for MimicGen as JSON files under <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimicgen/exps/&lt;YOUR/TASK/SUITE&gt;</span></code>. It also exports a bash script for running all data generation jobs. You can run them in parallel using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./exps/&lt;YOUR/TASK/SUITE&gt;/jobs.sh
+</pre></div>
+</div>
+<p>Each data data generation job runs <code class="docutils literal notranslate"><span class="pre">mimiclabs/mimicgen/scripts/generate_dataset.py</span></code>.</p>
+<section id="re-using-source-demonstrations-across-a-task-suite">
+<h3>Re-using source demonstrations across a task suite<a class="headerlink" href="#re-using-source-demonstrations-across-a-task-suite" title="Link to this heading">#</a></h3>
+<p>To re-use source datasets for new BDDLs when using MimicGen, create a <code class="docutils literal notranslate"><span class="pre">task_suite</span></code> containing all the new BDDLs, then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimicgen
+$<span class="w"> </span>python<span class="w"> </span>scripts/generate_configs_and_jobs.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--task_suite_name<span class="w"> </span>&lt;YOUR/TASK/SUITE&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source_dataset_path<span class="w"> </span>&lt;PATH/TO/REUSABLE/SOURCE/DEMOS&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--generation_dir<span class="w"> </span>&lt;DIR/TO/GENERATION/DEMOS&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--num_demos<span class="w"> </span>&lt;NUM_DEMOS_PER_TASK&gt;
+</pre></div>
+</div>
+<p>where you can provide the source demos that you want to re-use for all tasks in the suite, in the <code class="docutils literal notranslate"><span class="pre">--source_dataset_path</span></code> arg.</p>
 </section>
-<section id="mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">
-<h2>mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module<a class="headerlink" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -362,6 +398,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="data_collection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data Collection</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tutorials/study_design.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Design a study</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -378,9 +432,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-backup-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.backup_mimiclabs_tabletop_manipulation module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimiclabs-envs-problems-mimiclabs-tabletop-manipulation-module">mimiclabs.envs.problems.mimiclabs_tabletop_manipulation module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-source-demonstrations">Preparing your source demonstrations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-mimicgen-configs-and-generation-jobs">Creating MimicGen configs and generation jobs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-using-source-demonstrations-across-a-task-suite">Re-using source demonstrations across a task suite</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -35,10 +35,10 @@ $ python reader.py
 
 ## Setting up SpaceMouse as a teleop device
 
-Setting up your SpaceMouse just requires installing `hid` in your python environment.
+Setting up your SpaceMouse just requires installing `hidapi` in your python environment.
 
 ```bash
-$ pip install hid
+$ pip install hidapi
 ```
 
 Simply connect the SpaceMouse using a USB cable and follow instructions for collecting demonstrations in MimicLabs.

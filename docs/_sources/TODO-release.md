@@ -1,5 +1,0 @@
-- [x] check if all datasets have been generated
-- [x] setup dataset download from huggingface 
-- [x] script to download our assets
-- [ ] docs website
-- [ ] ppt / video

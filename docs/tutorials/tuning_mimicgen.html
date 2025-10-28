@@ -37,7 +37,7 @@
   <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../static/documentation_options.js?v=a681ed88"></script>
-    <script src="../static/doctools.js?v=9a2dae69"></script>
+    <script src="../static/doctools.js?v=9bcbadda"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tuning_mimicgen';</script>
@@ -160,9 +160,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modules/1_task_suite_creation.html">Task Suites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/2_demo_collection.html">Data Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/data_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
@@ -421,19 +421,22 @@ document.write(`
 <tr class="row-odd"><td class="text-left"><p>source_demos_dir</p></td>
 <td class="text-left"><p>directory containing source demos for the task suite, one subdirectory per task bddl file</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>generation_dir</p></td>
+<tr class="row-even"><td class="text-left"><p>source_dataset_path</p></td>
+<td class="text-left"><p>if provided, uses this path to load source demos for each task instead of looking for demos in source_demos_dir/task_name</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>generation_dir</p></td>
 <td class="text-left"><p>directory to store generated demos for the task suite, one subdirectory per task bddl file</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>num_demos</p></td>
+<tr class="row-even"><td class="text-left"><p>num_demos</p></td>
 <td class="text-left"><p>number of demos to generate for each task bddl</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>camera_names</p></td>
+<tr class="row-odd"><td class="text-left"><p>camera_names</p></td>
 <td class="text-left"><p>list of camera names to use for rendering and store to dataset; default is [“agentview”, “robot0_eye_in_hand”]</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>camera_height</p></td>
+<tr class="row-even"><td class="text-left"><p>camera_height</p></td>
 <td class="text-left"><p>camera height to use for rendering; default is 84</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>camera_width</p></td>
+<tr class="row-odd"><td class="text-left"><p>camera_width</p></td>
 <td class="text-left"><p>camera width to use for rendering; default is 84</p></td>
 </tr>
 </tbody>

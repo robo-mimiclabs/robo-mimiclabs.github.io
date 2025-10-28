@@ -37,13 +37,13 @@
   <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../static/documentation_options.js?v=a681ed88"></script>
-    <script src="../static/doctools.js?v=9a2dae69"></script>
+    <script src="../static/doctools.js?v=9bcbadda"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/download_datasets';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Task Suites" href="../modules/1_task_suite_creation.html" />
+    <link rel="next" title="Task Suites" href="../modules/task_suite_creation.html" />
     <link rel="prev" title="Setting up Data Collection Devices" href="setup_devices.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,9 +160,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modules/1_task_suite_creation.html">Task Suites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/2_demo_collection.html">Data Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/3_dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/task_suite_creation.html">Task Suites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/data_collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dataset_expansion.html">Dataset Expansion using MimicGen</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -331,7 +331,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-provided-scripts-recommended">Using provided scripts (recommended)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-image-observations-to-datasets">Add image observations to datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-image-observations-to-datasets">Adding image observations to datasets</a></li>
 </ul>
             </nav>
         </div>
@@ -347,14 +347,14 @@ document.write(`
 <h1>MimicLabs Study Datasets<a class="headerlink" href="#mimiclabs-study-datasets" title="Link to this heading">#</a></h1>
 <section id="download-datasets">
 <h2>Download datasets<a class="headerlink" href="#download-datasets" title="Link to this heading">#</a></h2>
-<p>We open-source all the datasets used in our study paper, which contains over 850k trajectories across 8 different scenes (<code class="docutils literal notranslate"><span class="pre">lab1</span></code> through <code class="docutils literal notranslate"><span class="pre">lab8</span></code>) that were used to study the effects of different retrieval strategies from a large-scale simulation dataset. We have made low-dimensional observations and actions available for download. You can add image observations to these datasets using instructions in the subsequent sub-section.</p>
+<p>We open-source all datasets used in our study paper, which contains over 850k trajectories across 8 different scenes (<code class="docutils literal notranslate"><span class="pre">lab1</span></code> through <code class="docutils literal notranslate"><span class="pre">lab8</span></code>) that were used to study the effects of different retrieval strategies from a large-scale simulation dataset. Low-dimensional observations and actions are readily available for download. You may add image observations to these datasets using instructions below.</p>
 <section id="using-web-url">
 <h3>Using web URL<a class="headerlink" href="#using-web-url" title="Link to this heading">#</a></h3>
-<p>You can download all datasets from <a class="reference external" href="https://huggingface.co/datasets/vaibhavsaxena11/mimiclabs_datasets/tree/main">Hugging Face</a>.</p>
+<p>All datasets are available to download from <a class="reference external" href="https://huggingface.co/datasets/vaibhavsaxena11/mimiclabs_datasets/tree/main">Hugging Face</a>.</p>
 </section>
 <section id="using-provided-scripts-recommended">
 <h3>Using provided scripts (recommended)<a class="headerlink" href="#using-provided-scripts-recommended" title="Link to this heading">#</a></h3>
-<p>You can also download all datasets using the provided script (CAUTION: this will download ~115GB of data):</p>
+<p>You can also download all datasets using the provided script (CAUTION: this will download ~323GB of data):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimiclabs
 $<span class="w"> </span>python<span class="w"> </span>scripts/download_mimiclabs_datasets.py<span class="w"> </span>--download_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;
 </pre></div>
@@ -369,14 +369,19 @@ $<span class="w"> </span>python<span class="w"> </span>scripts/download_mimiclab
 </div>
 </section>
 </section>
-<section id="add-image-observations-to-datasets">
-<h2>Add image observations to datasets<a class="headerlink" href="#add-image-observations-to-datasets" title="Link to this heading">#</a></h2>
-<p>Downloaded datasets only contain low-dim observations. To add image observations to the downloaded datasets, run:</p>
+<section id="adding-image-observations-to-datasets">
+<h2>Adding image observations to datasets<a class="headerlink" href="#adding-image-observations-to-datasets" title="Link to this heading">#</a></h2>
+<p>Downloaded datasets only contain low-dim observations. To add image observations from the <code class="docutils literal notranslate"><span class="pre">agentview</span></code> and <code class="docutils literal notranslate"><span class="pre">eye_in_hand</span></code> cameras to the downloaded datasets, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_THIS_REPO&gt;/mimiclabs/mimiclabs
 $<span class="w"> </span>python<span class="w"> </span>scripts/add_obs_to_mimiclabs_datasets.py<span class="w"> </span>--input_root_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;/mimiclabs_study<span class="w"> </span>--output_root_dir<span class="w"> </span>&lt;YOUR_DOWNLOAD_DIR&gt;/mimiclabs_study
 </pre></div>
 </div>
-<p>This will generate a script called <code class="docutils literal notranslate"><span class="pre">add_obs_to_mimiclabs_datasets.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> directory, which you can run using:</p>
+<p>This will generate a script called <code class="docutils literal notranslate"><span class="pre">add_obs_to_mimiclabs_datasets.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> directory.</p>
+<div class="admonition note">
+    <p class="admonition-title">Adding depth images</p>
+    Above script will default to adding image observations only. If you would like to add depth observations, you can run the above script using the additional --add_depth_obs flag.
+</div>
+<p>Subsequently run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>scripts/add_obs_to_mimiclabs_datasets.sh
 $<span class="w"> </span>./scripts/add_obs_to_mimiclabs_datasets.sh
 </pre></div>
@@ -405,7 +410,7 @@ $<span class="w"> </span>./scripts/add_obs_to_mimiclabs_datasets.sh
       </div>
     </a>
     <a class="right-next"
-       href="../modules/1_task_suite_creation.html"
+       href="../modules/task_suite_creation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -434,7 +439,7 @@ $<span class="w"> </span>./scripts/add_obs_to_mimiclabs_datasets.sh
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-provided-scripts-recommended">Using provided scripts (recommended)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-image-observations-to-datasets">Add image observations to datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-image-observations-to-datasets">Adding image observations to datasets</a></li>
 </ul>
   </nav></div>
 

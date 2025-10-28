@@ -24,17 +24,15 @@ Welcome to mimiclabs's documentation!
    :maxdepth: 1
    :caption: Modules
 
-   modules/1_task_suite_creation
-   modules/2_demo_collection
-   modules/3_dataset_expansion
+   modules/task_suite_creation
+   modules/data_collection
+   modules/dataset_expansion
 
 .. toctree::
    :maxdepth: 1
    :caption: Tutorials
 
    tutorials/study_design
-   tutorials/using_mimiclabs_datasets
-   tutorials/policy_learning
    tutorials/tuning_mimicgen
 
 .. toctree::
